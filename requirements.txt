@@ -1,0 +1,48 @@
+# Python 3.12.12
+
+streamlit>=1.36.0
+
+# ChromaDB (vector store backend)
+chromadb>=0.5.5
+
+# LangChain core split packages (최신 계열)
+langchain>=0.2.11
+langchain-core>=0.2.24
+langchain-community>=0.2.10
+langchain-text-splitters>=0.2.2
+
+# Chroma integration for LangChain
+langchain-chroma>=0.1.4
+
+# Ollama integration for LangChain (Embeddings, ChatOllama)
+langchain-ollama>=0.1.0
+
+# PDF loader dependencies (PyPDFLoader 내부에서 필요)
+pypdf>=4.2.0
+
+# Chroma/embedding stack가 내부적으로 요구하는 경우가 많아 안정성 위해 포함
+numpy>=1.26.0
+
+# 운영체제/환경에 따라 TLS, HTTP 안정성에 도움 (선택이지만 권장)
+requests>=2.32.0
+
+nltk==3.8.1
+pypdfium2
+pypdf
+rapidocr-onnxruntime
+sentence-transformers
+unstructured
+unstructured[pdf]
+
+python-pptx
+#python-magic-bin==0.4.14
+
+faiss-cpu
+grandalf 
+streamlit
+
+# To parse news RSS
+requests
+feedparser
+
+streamlit-autorefresh
