@@ -1,6 +1,5 @@
-# BaseRAG.py
 # ------------------------------------------------------------
-# 이 파일(BaseRAG.py)의 역할 요약
+# BaseRAG.py 기능 정의
 # ------------------------------------------------------------
 # 1) Streamlit 기반 채팅 UI
 #    - 여러 채팅방(chats) 관리
@@ -14,22 +13,18 @@
 #    - PdfWatcher: DATA_DIR 변경 감지 및 임베딩
 #    - NewsCrawlerEmbedder: 뉴스 크롤링 및 텍스트 임베딩
 #    - PaperFetcherWorker: 논문(예: Semantic Scholar 등) 수집 및 PDF 다운로드
-#
-# [정리된 원칙]
-# - 워커 시작은 start_background_workers_once() 하나로 통일합니다.
-# - Streamlit rerun 특성상 워커 스레드가 중복 생성되지 않도록 session_state에 thread 핸들을 저장합니다.
-# - "처음 Streamlit 실행 시" 즉시 임베딩/크롤링이 수행되지 않도록, 각 워커의 첫 run_once 호출을 1회 스킵합니다.
-# - import/config 중복을 제거하여 유지보수성을 높입니다.
 # ------------------------------------------------------------
+
+# 파이썬 타입 힌트에서 forward reference(문자열 타입 선언 등)를 좀 더 편하게 사용하기 위한 설정
 from __future__ import annotations
 
-import os
-import time
-import uuid
-from typing import Callable
+import os                           # 운영체제 경로 조작, 파일 입출력 등
+import time                         # 시간 관련 함수    
+import uuid                         # 고유 식별자 생성    
+from typing import Callable         # 타입 힌트용 Callable
 
-import streamlit as st
-import config
+import streamlit as st              # Streamlit 웹 앱 프레임워크
+import config                       # 설정값 모듈
 
 # ------------------------------------------------------------
 # config.py에서 가져오는 설정값들
@@ -63,23 +58,23 @@ from trag.workers.scorpus_search_worker import ScopusSearchWorker
 logger = get_logger("app", LOG_DIR)
 
 
+# 실행에 필요한 폴더를 미리 생성합니다.
+# exist_ok=True 이므로 이미 있으면 그대로 둡니다.
 def ensure_dirs():
-    # 실행에 필요한 폴더를 미리 생성합니다.
-    # exist_ok=True 이므로 이미 있으면 그대로 둡니다.
     os.makedirs(DATA_DIR, exist_ok=True)
     os.makedirs(NEWS_TEXT_DIR, exist_ok=True)
     os.makedirs(LOG_DIR, exist_ok=True)
     os.makedirs(STATE_DIR, exist_ok=True)
 
-
+# Streamlit은 스크립트를 rerun(재실행)하지만 st.session_state는 유지됩니다.
+# 따라서 "없을 때만" 초기화해 중복 생성/초기화를 방지합니다.
 def init_app_state():
-    # Streamlit은 스크립트를 rerun(재실행)하지만 st.session_state는 유지됩니다.
-    # 따라서 "없을 때만" 초기화해 중복 생성/초기화를 방지합니다.
-
+    # 채팅방 목록을 구성하는 딕셔너리
     if "chats" not in st.session_state:
-        # 채팅방 목록: chat_id -> {title, messages, created_at}
         st.session_state.chats = {}
 
+    # 현재 활성 채팅방 ID
+    # 채팅방이 하나도 없으면 새로 생성합니다. (현재 활성 채팅 ID를 active_chat_id에 저장)
     if "active_chat_id" not in st.session_state:
         # 현재 활성 채팅방(화면에 표시되는 채팅방)
         cid = create_new_chat()
@@ -96,14 +91,17 @@ def init_app_state():
         st.session_state.paper_fetcher = PaperFetcherWorker()
 
     if "scopus_searcher" not in st.session_state:
-        # Scopus(Elsevier) 검색 워커: 키워드 기반 논문 메타데이터 수집
         st.session_state.scopus_searcher = ScopusSearchWorker()
 
     # 워커 스레드 핸들 저장용(중복실행 방지 목적)
+    # 실제 Thread 객체(BaseWorker)를 저장합니다.
     if "workers" not in st.session_state:
         st.session_state.workers = {}  # name -> BaseWorker(Thread)
 
 
+# 채팅방 새로 만들기
+# chat_id는 UUID의 앞 8글자를 사용하며, chats 딕셔너리에 새 항목을 추가합니다.
+# 메시지 리스트(messages)는 빈 리스트로 초기화되고, created_at으로 타임스탬프를 기록합니다.
 def create_new_chat() -> str:
     cid = str(uuid.uuid4())[:8]
     st.session_state.chats[cid] = {
@@ -113,7 +111,10 @@ def create_new_chat() -> str:
     }
     return cid
 
-
+# 채팅방 제목 자동 설정
+# 첫 번째 사용자 메시지를 기준으로 제목을 설정합니다.
+# 제목이 기본값("Chat N")인 경우에만 변경합니다.
+# 제목은 최대 24글자까지만 사용하며, 그 이상이면 "..."으로 생략합니다.
 def set_chat_title_if_needed(chat_id: str):
     chat = st.session_state.chats[chat_id]
     if chat["title"].startswith("Chat ") and chat["messages"]:
@@ -122,7 +123,10 @@ def set_chat_title_if_needed(chat_id: str):
             t = first_user["content"].strip()
             chat["title"] = (t[:24] + "...") if len(t) > 24 else t
 
-
+# 처음 실행 시 즉시 임베딩 방지
+# 워커 스레드가 시작되면 바로 run_once_fn()을 1회 호출합니다.
+# 그러나 "앱 시작 직후" 임베딩/크롤링을 원하지 않는 요구사항을 만족하기 위해
+# 첫 호출을 no-op으로 스킵하는 wrapper를 제공합니다.
 def _skip_first_run(fn: Callable[[], None], label: str) -> Callable[[], None]:
     """BaseWorker는 thread 시작 직후 run_once_fn()을 1회 호출합니다.
 
@@ -147,6 +151,7 @@ def _skip_first_run(fn: Callable[[], None], label: str) -> Callable[[], None]:
     return _wrapped
 
 
+# 모든 백그라운드 워커 시작 함수
 def start_background_workers_once():
     """워커 시작 방식을 이 함수 하나로 통일합니다.
 
@@ -154,16 +159,18 @@ def start_background_workers_once():
     - 워커 인스턴스는 init_app_state()에서 만든 객체를 재사용
     - thread 시작 직후 1회 호출되는 run_once를 스킵하여 "앱 시작 즉시" 임베딩/크롤링 방지
     """
+
+    # 기존 워커 스레드 핸들
     workers = st.session_state.workers
 
     # -------------------------
-    # Paper Fetch Worker
+    # Paper Fetch Worker 시작
     # -------------------------
     if "paper_fetch" not in workers or not workers["paper_fetch"].is_alive():
         paper_worker = st.session_state.paper_fetcher
         t = BaseWorker(
             name="PaperFetchWorker",
-            interval_seconds=int(getattr(config, "PAPER_FETCH_INTERVAL_SECONDS", 600)),
+            interval_seconds=int(getattr(config, "PAPER_FETCH_INTERVAL_SECONDS", 6000)), # 논문 수집 주기 (기본값 600초)
             run_once_fn=_skip_first_run(paper_worker.run_once, "PaperFetchWorker"),
             daemon=True,
         )
@@ -177,7 +184,7 @@ def start_background_workers_once():
         pdf_worker = st.session_state.pdf_watcher
         t = BaseWorker(
             name="PdfWatcherWorker",
-            interval_seconds=int(getattr(config, "PDF_WATCH_INTERVAL_SECONDS", PDF_WATCH_INTERVAL_SECONDS)),
+            interval_seconds=int(getattr(config, "PDF_WATCH_INTERVAL_SECONDS", 6000)),
             run_once_fn=_skip_first_run(pdf_worker.run_once, "PdfWatcherWorker"),
             daemon=True,
         )
@@ -191,7 +198,7 @@ def start_background_workers_once():
         news_worker = st.session_state.news_embedder
         t = BaseWorker(
             name="NewsCrawlerWorker",
-            interval_seconds=int(getattr(config, "NEWS_CRAWL_INTERVAL_SECONDS", NEWS_CRAWL_INTERVAL_SECONDS)),
+            interval_seconds=int(getattr(config, "NEWS_CRAWL_INTERVAL_SECONDS", 6000)),
             run_once_fn=_skip_first_run(news_worker.run_once, "NewsCrawlerWorker"),
             daemon=True,
         )
@@ -205,7 +212,7 @@ def start_background_workers_once():
         scopus_worker = st.session_state.scopus_searcher
         t = BaseWorker(
             name="ScopusSearchWorker",
-            interval_seconds=int(getattr(config, "SCOPUS_SEARCH_INTERVAL_SECONDS", 600)),
+            interval_seconds=int(getattr(config, "SCOPUS_SEARCH_INTERVAL_SECONDS", 6000)),
             run_once_fn=_skip_first_run(scopus_worker.run_once, "ScopusSearchWorker"),
             daemon=True,
         )
@@ -213,6 +220,9 @@ def start_background_workers_once():
         workers["scopus_search"] = t
 
 
+# 현재 채팅창 종료 전까지 맥락 유지 (채팅 맥락을 LangChain 메시지 타입으로 변환)
+# Streamlit 세션 내에서는 chat_messages가 유지되므로 history로 전달하여 대화 일관성을 높입니다.
+# LLM 답변을 벡터DB에 넣지 않음
 def build_langchain_history(chat_messages):
     """(16) 현재 채팅창 종료 전까지 맥락 유지
 
