@@ -1,0 +1,7 @@
+TITLE: ‘정신건강 위험’ 비판에…오픈AI 안전 책임자 재모집 - 문화일보
+URL: https://news.google.com/rss/articles/CBMiUEFVX3lxTE4yMlo2b1VhX2ZIT3hRQ3MtTlFkM0RWTXRNQnRZSVJqbWt5UV85UndCR0NYX2ppREdNdmtIbnI4bkJjb19nMjRWaHB6M3pSUkRS?oc=5
+SOURCE: google_news_rss
+QUERY: AI 안전
+EXTRACTION: minimal
+
+Google News

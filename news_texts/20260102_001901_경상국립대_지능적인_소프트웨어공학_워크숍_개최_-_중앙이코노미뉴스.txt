@@ -1,0 +1,7 @@
+TITLE: 경상국립대, ‘지능적인 소프트웨어공학 워크숍’ 개최 - 중앙이코노미뉴스
+URL: https://news.google.com/rss/articles/CBMickFVX3lxTFA4enpTVVNxMDJ1ekZXRGp1X0hZMVp6ZU5ZX0NpaHdYemZ4TVdUYzEtUXp2UjBjRnBIZ3VhSHhSakFFd2NJTWthYmhzYWxlM3lrNTV0NUQ3WjBYWExidHZYV05mWUptcHg2NHNUajJsNGgtdw?oc=5
+SOURCE: google_news_rss
+QUERY: 소프트웨어 공학
+EXTRACTION: minimal
+
+Google News

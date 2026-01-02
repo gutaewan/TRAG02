@@ -1,0 +1,7 @@
+TITLE: [신년사] 임종식 경북교육감 “안전·AI·학령인구 대응 교육 전환” - 경북일보
+URL: https://news.google.com/rss/articles/CBMib0FVX3lxTE5rT1BxUDFCWHMtTkFjU0FlZnJuV0xOT1VhWEFmQXdxRmdVNUNEdlpMTHJhVjZheDFFQ2k5NjdfYWVOZDUwZ2d2cEVna3ZmeTVVNElDbzRGeU5uTXk0U0NkSGNRemkzZXpUMzRhdFpOZw?oc=5
+SOURCE: google_news_rss
+QUERY: AI 안전
+EXTRACTION: minimal
+
+Google News

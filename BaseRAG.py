@@ -1,869 +1,323 @@
+# BaseRAG.py
+# ------------------------------------------------------------
+# 이 파일(BaseRAG.py)의 역할 요약
+# ------------------------------------------------------------
+# 1) Streamlit 기반 채팅 UI
+#    - 여러 채팅방(chats) 관리
+#    - 현재 채팅(active_chat_id) 선택 및 메시지 렌더링
+# 2) RAG 파이프라인 호출
+#    - generate_answer(user_input, history) 형태로 LLM 답변 생성
+# 3) 파일 기반 지식 소스 관리
+#    - 사용자가 업로드한 PDF는 DATA_DIR(기본 ./data)에 저장
+#    - 뉴스/논문 텍스트(또는 상태 파일)는 NEWS_TEXT_DIR/STATE_DIR에 저장
+# 4) 백그라운드 워커(Threading)
+#    - PdfWatcher: DATA_DIR 변경 감지 및 임베딩
+#    - NewsCrawlerEmbedder: 뉴스 크롤링 및 텍스트 임베딩
+#    - PaperFetcherWorker: 논문(예: Semantic Scholar 등) 수집 및 PDF 다운로드
+#
+# [정리된 원칙]
+# - 워커 시작은 start_background_workers_once() 하나로 통일합니다.
+# - Streamlit rerun 특성상 워커 스레드가 중복 생성되지 않도록 session_state에 thread 핸들을 저장합니다.
+# - "처음 Streamlit 실행 시" 즉시 임베딩/크롤링이 수행되지 않도록, 각 워커의 첫 run_once 호출을 1회 스킵합니다.
+# - import/config 중복을 제거하여 유지보수성을 높입니다.
+# ------------------------------------------------------------
+from __future__ import annotations
+
 import os
 import time
-import logging
-import re
-from typing import Dict, Any, List
-import threading
-import queue
-import traceback
+import uuid
+from typing import Callable
 
 import streamlit as st
-from langchain_community.chat_message_histories import StreamlitChatMessageHistory
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_core.runnables import RunnableLambda, RunnablePassthrough
-from langchain_core.runnables.history import RunnableWithMessageHistory
-from langchain_ollama import ChatOllama
+import config
 
-
-from trag.vectorstore import (
-    get_vectorstore,
-    vectordb_dir,
-    list_pdfs,
-    save_uploaded_pdf,
-    sync_pdf_dir,
+# ------------------------------------------------------------
+# config.py에서 가져오는 설정값들
+# - 폴더 경로, 주기(초), 앱 타이틀 등
+# ------------------------------------------------------------
+from config import (
+    APP_TITLE,
+    DATA_DIR,
+    NEWS_TEXT_DIR,
+    LOG_DIR,
+    STATE_DIR,
+    PDF_WATCH_INTERVAL_SECONDS,
+    NEWS_CRAWL_INTERVAL_SECONDS,
 )
 
-from trag.news_crawler import (
-    crawl_news_once,
-    list_news_txts,
-    sync_news_dir,
-)
+from trag.logging_utils import get_logger
+from trag.vectorstore_factory import get_vectorstore
+from trag.rag_pipeline import generate_answer
 
-from trag.storage import (
-    get_chat_store_dir,
-    init_chat_registry_state,
-    sidebar_chat_list_ui,
-    hydrate_history,
-    save_messages,
-    save_chat_registry,
-    make_chat_title,
-)
+from trag.workers.base_worker import BaseWorker
+from trag.workers.pdf_watcher_worker import PdfWatcher
+from trag.workers.news_crawl_worker import NewsCrawlerEmbedder
+from trag.workers.paper_fetch_worker import PaperFetcherWorker
+from trag.workers.scorpus_search_worker import ScopusSearchWorker
 
-
-# LangChain 버전에 따라 import 경로가 달라질 수 있어 호환 처리
-try:
-    from langchain.chains import create_history_aware_retriever
-except Exception:
-    try:
-        from langchain.chains.history_aware_retriever import create_history_aware_retriever
-    except Exception:
-        create_history_aware_retriever = None
+# ------------------------------------------------------------
+# 로깅
+# - get_logger("app", LOG_DIR)가 FileHandler를 붙이면 ./logs 아래에 기록됩니다.
+# - 실제 파일 저장 여부는 trag.logging_utils.get_logger 구현에 따라 달라질 수 있습니다.
+# ------------------------------------------------------------
+logger = get_logger("app", LOG_DIR)
 
 
-# =========================
-# 0) Config (./config/config.py)
-#    - 단일 설정 소스: ./config/config.py
-#    - BaseRAG_v3.py 내부 클래스로 설정하지 않음
-# =========================
-
-CONFIG_DIR = "./config"
-CONFIG_FILE = os.path.join(CONFIG_DIR, "config.py")
-
-DEFAULTS: Dict[str, Any] = {
-    # Directories
-    "DATA_DIR": "./data",
-    "NEWS_DIR": "./news_texts",
-    "LOG_DIR": "./logs",
-    "VECTOR_DB_ROOT": "./vector_db",
-
-    # Vector DB
-    "VECTOR_DB": "chroma",
-
-    # Models
-    "LLM_MODEL": "llama3.2",
-    "EMBED_MODEL": "qwen3-embedding",
-
-    # Chunking
-    "CHUNK_SIZE": 1000,
-    "CHUNK_OVERLAP": 200,
-
-    # Periodic intervals
-    "PDF_SYNC_INTERVAL_SEC": 600,
-    "NEWS_CRAWL_INTERVAL_SEC": 600,
-
-    # News
-    "NEWS_KEYWORDS": ["소프트웨어 공학", "AI 안전", "자동차 기능안전", "SDV"],
-    "NEWS_MAX_ITEMS_PER_KEYWORD": 10,
-    "NEWS_TIMEOUT_SEC": 20,
-
-    # Auto refresh
-    "AUTO_REFRESH_ENABLED": True,
-    "AUTO_REFRESH_TICK_SEC": 30,
-
-    # Safety: reset stuck "generating" state if a run is interrupted
-    "GENERATION_STALE_SEC": 180,
-}
-
-TEMPLATE_CONFIG = """# TRAG01 설정 파일\n# 여기 값을 수정하면 BaseRAG_v3.py가 그대로 반영합니다.\n\n# Directories\nDATA_DIR = \"./data\"\nNEWS_DIR = \"./news_texts\"\nLOG_DIR = \"./logs\"\nVECTOR_DB_ROOT = \"./vector_db\"\n\n# Vector DB\nVECTOR_DB = \"chroma\"\n\n# Models\nLLM_MODEL = \"llama3.2\"\nEMBED_MODEL = \"qwen3-embedding\"\n\n# Chunking\nCHUNK_SIZE = 1000\nCHUNK_OVERLAP = 200\n\n# Periodic intervals (seconds)\nPDF_SYNC_INTERVAL_SEC = 600\nNEWS_CRAWL_INTERVAL_SEC = 600\n\n# News\nNEWS_KEYWORDS = [\"소프트웨어 공학\", \"AI 안전\", \"자동차 기능안전\", \"SDV\"]\nNEWS_MAX_ITEMS_PER_KEYWORD = 10\nNEWS_TIMEOUT_SEC = 20\n\n# Auto refresh\nAUTO_REFRESH_ENABLED = True\nAUTO_REFRESH_TICK_SEC = 30\n\n# Safety: reset stuck \"generating\" state if a run is interrupted\nGENERATION_STALE_SEC = 180\n"""
+def ensure_dirs():
+    # 실행에 필요한 폴더를 미리 생성합니다.
+    # exist_ok=True 이므로 이미 있으면 그대로 둡니다.
+    os.makedirs(DATA_DIR, exist_ok=True)
+    os.makedirs(NEWS_TEXT_DIR, exist_ok=True)
+    os.makedirs(LOG_DIR, exist_ok=True)
+    os.makedirs(STATE_DIR, exist_ok=True)
 
 
-def ensure_config_file() -> None:
-    os.makedirs(CONFIG_DIR, exist_ok=True)
-    if not os.path.exists(CONFIG_FILE):
-        with open(CONFIG_FILE, "w", encoding="utf-8") as f:
-            f.write(TEMPLATE_CONFIG)
+def init_app_state():
+    # Streamlit은 스크립트를 rerun(재실행)하지만 st.session_state는 유지됩니다.
+    # 따라서 "없을 때만" 초기화해 중복 생성/초기화를 방지합니다.
+
+    if "chats" not in st.session_state:
+        # 채팅방 목록: chat_id -> {title, messages, created_at}
+        st.session_state.chats = {}
+
+    if "active_chat_id" not in st.session_state:
+        # 현재 활성 채팅방(화면에 표시되는 채팅방)
+        cid = create_new_chat()
+        st.session_state.active_chat_id = cid
+
+    # 워커 인스턴스(세션 내 싱글톤처럼 사용)
+    if "pdf_watcher" not in st.session_state:
+        st.session_state.pdf_watcher = PdfWatcher()
+
+    if "news_embedder" not in st.session_state:
+        st.session_state.news_embedder = NewsCrawlerEmbedder()
+
+    if "paper_fetcher" not in st.session_state:
+        st.session_state.paper_fetcher = PaperFetcherWorker()
+
+    if "scopus_searcher" not in st.session_state:
+        # Scopus(Elsevier) 검색 워커: 키워드 기반 논문 메타데이터 수집
+        st.session_state.scopus_searcher = ScopusSearchWorker()
+
+    # 워커 스레드 핸들 저장용(중복실행 방지 목적)
+    if "workers" not in st.session_state:
+        st.session_state.workers = {}  # name -> BaseWorker(Thread)
 
 
-def load_config() -> Dict[str, Any]:
-    ensure_config_file()
-    cfg = dict(DEFAULTS)
-    try:
-        import importlib.util
-
-        spec = importlib.util.spec_from_file_location("trag_user_config", CONFIG_FILE)
-        if spec and spec.loader:
-            mod = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(mod)  # type: ignore
-            for k in list(DEFAULTS.keys()):
-                if hasattr(mod, k):
-                    cfg[k] = getattr(mod, k)
-    except Exception as e:
-        print(f"[WARN] Failed to load config.py: {e}")
-    # normalize types
-    if isinstance(cfg.get("NEWS_KEYWORDS"), tuple):
-        cfg["NEWS_KEYWORDS"] = list(cfg["NEWS_KEYWORDS"])
-    return cfg
-
-
-CFG: Dict[str, Any] = load_config()
-
-# Ensure dirs
-os.makedirs(str(CFG["DATA_DIR"]), exist_ok=True)
-os.makedirs(str(CFG["NEWS_DIR"]), exist_ok=True)
-os.makedirs(str(CFG["LOG_DIR"]), exist_ok=True)
-os.makedirs(str(CFG["VECTOR_DB_ROOT"]), exist_ok=True)
-
-
-
-os.makedirs(str(CFG["LOG_DIR"]), exist_ok=True)
-LOG_PATH = os.path.join(str(CFG["LOG_DIR"]), "app.log")
-
-logger = logging.getLogger("trag")
-logger.setLevel(logging.INFO)
-if not logger.handlers:
-    fh = logging.FileHandler(LOG_PATH, encoding="utf-8")
-    fmt = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
-    fh.setFormatter(fmt)
-    logger.addHandler(fh)
-
-
-# =========================
-# Background Workers (threading)
-# =========================
-
-@st.cache_resource
-def get_worker_bus():
-    """Singleton bus for background workers.
-
-    cmd_q: UI -> worker commands
-    event_q: worker -> UI events
-    db_lock: serialize Chroma access (avoid concurrent read/write corruption)
-    stop_event: allow graceful stop (best-effort)
-    """
-    return {
-        "cmd_q": queue.Queue(),
-        "event_q": queue.Queue(),
-        "db_lock": threading.Lock(),
-        "stop_event": threading.Event(),
-        "started": False,
-        "thread": None,
-        "status": {
-            "busy": False,
-            "last_ts": None,
-            "pdf_added_chunks": 0,
-            "news_created_files": 0,
-            "news_added_chunks": 0,
-            "last_error": None,
-        },
+def create_new_chat() -> str:
+    cid = str(uuid.uuid4())[:8]
+    st.session_state.chats[cid] = {
+        "title": f"Chat {len(st.session_state.chats) + 1}",
+        "messages": [],  # list of {"role": "user"/"assistant", "content": "..."}
+        "created_at": time.time(),
     }
+    return cid
 
 
-def _bus_emit(bus, typ: str, msg: str = "", **data):
-    try:
-        payload = {"ts": time.time(), "type": typ, "msg": msg}
-        payload.update(data)
-        bus["event_q"].put(payload)
-    except Exception:
-        pass
+def set_chat_title_if_needed(chat_id: str):
+    chat = st.session_state.chats[chat_id]
+    if chat["title"].startswith("Chat ") and chat["messages"]:
+        first_user = next((m for m in chat["messages"] if m["role"] == "user"), None)
+        if first_user:
+            t = first_user["content"].strip()
+            chat["title"] = (t[:24] + "...") if len(t) > 24 else t
 
 
-def _run_sync_cycle(bus):
-    """One sync cycle: PDF sync + news crawl + news sync.
+def _skip_first_run(fn: Callable[[], None], label: str) -> Callable[[], None]:
+    """BaseWorker는 thread 시작 직후 run_once_fn()을 1회 호출합니다.
 
-    NOTE: Must not call streamlit APIs.
+    요구사항: "처음 Streamlit 실행될 때는 임베딩/크롤링을 하지 말아달라"를 만족하기 위해
+    첫 호출을 1회 no-op으로 스킵하는 wrapper를 제공합니다.
+
+    - 이 wrapper는 thread마다 독립적으로 동작합니다.
+    - 사용자가 업로드 직후 즉시 임베딩을 원해 수동 run_once를 호출하는 경우는 그대로 허용됩니다.
     """
-    try:
-        cfg = load_config()
-        embed_model = str(cfg.get("EMBED_MODEL", "qwen3-embedding"))
+    first = {"v": True}
 
-        _bus_emit(bus, "sync_start", "sync started")
-        bus["status"]["busy"] = True
-        bus["status"]["last_error"] = None
-
-        # Build/open vectorstore inside lock to avoid concurrent open/write
-        with bus["db_lock"]:
-            vs_local = get_vectorstore(cfg, embed_model, logger)
-            pdf_added = sync_pdf_dir(vs_local, cfg, embed_model, logger)
-            created_files = crawl_news_once(cfg, logger)
-            news_added = sync_news_dir(vs_local, cfg, embed_model, logger)
-
-        bus["status"].update({
-            "busy": False,
-            "last_ts": time.time(),
-            "pdf_added_chunks": int(pdf_added or 0),
-            "news_created_files": int(len(created_files or [])),
-            "news_added_chunks": int(news_added or 0),
-            "last_error": None,
-        })
-
-        # Log vector DB state change (Req 5,14)
-        logger.info(
-            "[WORKER] sync done. pdf_added_chunks=%s, news_created_files=%s, news_added_chunks=%s",
-            bus["status"]["pdf_added_chunks"],
-            bus["status"]["news_created_files"],
-            bus["status"]["news_added_chunks"],
-        )
-        _bus_emit(bus, "sync_end", "sync finished", **bus["status"])
-
-    except Exception as e:
-        err = f"{type(e).__name__}: {e}"
-        bus["status"].update({
-            "busy": False,
-            "last_ts": time.time(),
-            "pdf_added_chunks": 0,
-            "news_created_files": 0,
-            "news_added_chunks": 0,
-            "last_error": err,
-        })
-        logger.info(f"[WORKER] sync failed: {err}\n{traceback.format_exc()}")
-        _bus_emit(bus, "sync_error", err, **bus["status"])
-    finally:
-        bus["status"]["busy"] = False
-
-
-def _worker_loop(bus):
-    """Background loop.
-
-    - Does NOT sync on first start (Req: do not sync on first run)
-    - Periodically checks intervals for PDF/news and runs sync.
-    - Responds to explicit sync_now commands.
-    """
-    _bus_emit(bus, "worker_started", "worker started")
-
-    # Do not run immediately; set last_run to now.
-    last_run = time.time()
-
-    while not bus["stop_event"].is_set():
-        try:
-            # Handle commands
-            cmd = None
+    def _wrapped():
+        if first["v"]:
+            first["v"] = False
             try:
-                cmd = bus["cmd_q"].get_nowait()
-            except queue.Empty:
-                cmd = None
+                logger.info(f"[{label}] first run skipped (avoid startup embed/crawl)")
+            except Exception:
+                pass
+            return
+        fn()
 
-            if isinstance(cmd, dict) and cmd.get("type") == "sync_now":
-                _run_sync_cycle(bus)
-                last_run = time.time()
-
-            cfg = load_config()
-            pdf_iv = int(cfg.get("PDF_SYNC_INTERVAL_SEC", 600))
-            news_iv = int(cfg.get("NEWS_CRAWL_INTERVAL_SEC", 600))
-            interval = min(pdf_iv, news_iv)
-
-            if (time.time() - last_run) >= max(5, interval):
-                _run_sync_cycle(bus)
-                last_run = time.time()
-
-            # sleep in small increments for responsiveness
-            for _ in range(10):
-                if bus["stop_event"].is_set():
-                    break
-                time.sleep(1)
-
-        except Exception as e:
-            err = f"{type(e).__name__}: {e}"
-            logger.info(f"[WORKER] loop error: {err}\n{traceback.format_exc()}")
-            _bus_emit(bus, "worker_error", err)
-            time.sleep(2)
+    return _wrapped
 
 
-def start_worker_if_needed():
-    bus = get_worker_bus()
-    if bus.get("started") and bus.get("thread") is not None:
-        return bus
+def start_background_workers_once():
+    """워커 시작 방식을 이 함수 하나로 통일합니다.
 
-    t = threading.Thread(target=_worker_loop, args=(bus,), daemon=True)
-    bus["thread"] = t
-    bus["started"] = True
-    t.start()
-    return bus
-
-
-def drain_worker_events(bus):
-    """Drain worker events into st.session_state for UI rendering."""
-    st.session_state.setdefault("_worker_status", {})
-    st.session_state.setdefault("_worker_last_event", None)
-
-    drained = 0
-    try:
-        while drained < 50:
-            evt = bus["event_q"].get_nowait()
-            drained += 1
-            st.session_state["_worker_last_event"] = evt
-            # Keep latest status snapshot
-            if "busy" in evt or "pdf_added_chunks" in evt:
-                st.session_state["_worker_status"] = {
-                    "busy": bool(evt.get("busy", bus["status"].get("busy"))),
-                    "last_ts": evt.get("last_ts", bus["status"].get("last_ts")),
-                    "pdf_added_chunks": evt.get("pdf_added_chunks", bus["status"].get("pdf_added_chunks")),
-                    "news_created_files": evt.get("news_created_files", bus["status"].get("news_created_files")),
-                    "news_added_chunks": evt.get("news_added_chunks", bus["status"].get("news_added_chunks")),
-                    "last_error": evt.get("last_error", bus["status"].get("last_error")),
-                }
-    except queue.Empty:
-        pass
-    except Exception:
-        pass
-
-
-
-
-
-
-
-
-
-# --- LLM caching + Korean-only post-processing helpers ---
-@st.cache_resource
-def get_llm(model_name: str):
-    # Deterministic output helps reduce language-mixing
-    # Also bias toward Korean via system prompt and sampling controls.
-    try:
-        return ChatOllama(
-            model=model_name,
-            temperature=0.0,
-            top_p=0.9,
-            num_predict=512,
-            repeat_penalty=1.1,
-        )
-    except TypeError:
-        # Fallback for older langchain_ollama versions
-        return ChatOllama(model=model_name, temperature=0.0, top_p=0.9)
-
-
-_ALLOWED_ASCII_ACRONYMS = {
-    "SDV", "LLM", "AI", "ISO", "IEC", "ASIL", "HARA", "FMEA", "FMEDA", "FTA", "GSN",
-}
-
-
-def _needs_korean_rewrite(text: str) -> bool:
-    """Detect if the answer contains too much non-Korean text.
-
-    - Allow short ASCII acronyms (SDV, ISO 26262, AI, LLM, etc.)
-    - If there are many Latin words or CJK (non-Hangul) characters, request rewrite.
-    - Be aggressive for any non-Hangul CJK, Japanese kana, Cyrillic, Turkish, or Latin words (>=3 letters, not in allowlist).
+    - Streamlit rerun에도 중복 스레드 생성 방지: st.session_state.workers에 핸들 저장
+    - 워커 인스턴스는 init_app_state()에서 만든 객체를 재사용
+    - thread 시작 직후 1회 호출되는 run_once를 스킵하여 "앱 시작 즉시" 임베딩/크롤링 방지
     """
-    # Defensive import: prevents NameError if `re` is shadowed or missing in some environments
-    import re as _re
-    if not text:
-        return False
+    workers = st.session_state.workers
 
-    s = text.strip()
-    hangul = len(_re.findall(r"[가-힣]", s))
+    # -------------------------
+    # Paper Fetch Worker
+    # -------------------------
+    if "paper_fetch" not in workers or not workers["paper_fetch"].is_alive():
+        paper_worker = st.session_state.paper_fetcher
+        t = BaseWorker(
+            name="PaperFetchWorker",
+            interval_seconds=int(getattr(config, "PAPER_FETCH_INTERVAL_SECONDS", 600)),
+            run_once_fn=_skip_first_run(paper_worker.run_once, "PaperFetchWorker"),
+            daemon=True,
+        )
+        t.start()
+        workers["paper_fetch"] = t
 
-    # Latin words (length >= 3) excluding allowed acronyms
-    latin_words = _re.findall(r"[A-Za-z]{3,}", s)
-    latin_words_filtered = [w for w in latin_words if w.upper() not in _ALLOWED_ASCII_ACRONYMS]
+    # -------------------------
+    # PDF Watcher Worker
+    # -------------------------
+    if "pdf_watch" not in workers or not workers["pdf_watch"].is_alive():
+        pdf_worker = st.session_state.pdf_watcher
+        t = BaseWorker(
+            name="PdfWatcherWorker",
+            interval_seconds=int(getattr(config, "PDF_WATCH_INTERVAL_SECONDS", PDF_WATCH_INTERVAL_SECONDS)),
+            run_once_fn=_skip_first_run(pdf_worker.run_once, "PdfWatcherWorker"),
+            daemon=True,
+        )
+        t.start()
+        workers["pdf_watch"] = t
 
-    # Japanese Kana + CJK ideographs + Cyrillic etc. (anything we don't want mixed in)
-    jp_kana = _re.findall(r"[\u3040-\u30ff]", s)
-    cjk_ideographs = _re.findall(r"[\u4e00-\u9fff]", s)
-    cyrillic = _re.findall(r"[\u0400-\u04FF]", s)
-    turkish = _re.findall(r"[ğĞşŞıİöÖüÜ]", s)
+    # -------------------------
+    # News Crawl + Embed Worker
+    # -------------------------
+    if "news_crawl" not in workers or not workers["news_crawl"].is_alive():
+        news_worker = st.session_state.news_embedder
+        t = BaseWorker(
+            name="NewsCrawlerWorker",
+            interval_seconds=int(getattr(config, "NEWS_CRAWL_INTERVAL_SECONDS", NEWS_CRAWL_INTERVAL_SECONDS)),
+            run_once_fn=_skip_first_run(news_worker.run_once, "NewsCrawlerWorker"),
+            daemon=True,
+        )
+        t.start()
+        workers["news_crawl"] = t
 
-    # If ANY Japanese kana appear, rewrite.
-    if jp_kana:
-        return True
-
-    # If CJK ideographs appear together with Hangul, it's likely mixed-language (e.g., 自動運転).
-    if cjk_ideographs and hangul > 0:
-        return True
-
-    # If Cyrillic/Turkish letters appear, rewrite.
-    if cyrillic or turkish:
-        return True
-
-    # If there are any non-allowed Latin words and some Hangul exists, rewrite.
-    if latin_words_filtered and hangul > 0:
-        return True
-
-    # If Hangul is very scarce but foreign tokens exist, rewrite.
-    if hangul < 10 and (latin_words_filtered or cjk_ideographs or cyrillic or turkish):
-        return True
-
-    return False
-
-
-def _rewrite_to_korean_only(llm_model: str, answer: str) -> str:
-    """Rewrite answer into natural Korean. Keep technical acronyms as-is."""
-    llm = get_llm(llm_model)
-
-    sys = (
-        "당신은 한국어 편집자이자 번역가입니다. 아래 텍스트를 '자연스러운 한국어'로만 다시 작성하세요. "
-        "영어/일본어/중국어/베트남어/터키어/러시아어 등 어떤 외국어 문장도 섞지 마세요. "
-        "외국어 단어/문장/한자 표기(예: - 進める, 自動運転, 私の, expertise, özellikle 등)가 있으면 의미를 유지한 채 한국어로 번역해 바꿔 쓰세요. "
-        "다만 기술 약어/표준명/제품명(예: SDV, LLM, AI, ISO 26262, UNECE R155)은 필요할 때만 그대로 유지할 수 있습니다. "
-        "문체는 존댓말로 공손하게 유지하고, 문장은 매끄럽고 자연스럽게 연결하세요."
-    )
-
-    prompt = ChatPromptTemplate.from_messages(
-        [("system", sys), ("human", "다음 텍스트를 한국어로만 자연스럽게 다시 써 주세요:\n\n{answer}")]
-    )
-
-    try:
-        msg = prompt.invoke({"answer": answer})
-        out = llm.invoke(msg)
-        return getattr(out, "content", str(out)).strip()
-    except Exception:
-        return answer
+    # -------------------------
+    # Scopus Search Worker (metadata search)
+    # -------------------------
+    if "scopus_search" not in workers or not workers["scopus_search"].is_alive():
+        scopus_worker = st.session_state.scopus_searcher
+        t = BaseWorker(
+            name="ScopusSearchWorker",
+            interval_seconds=int(getattr(config, "SCOPUS_SEARCH_INTERVAL_SECONDS", 600)),
+            run_once_fn=_skip_first_run(scopus_worker.run_once, "ScopusSearchWorker"),
+            daemon=True,
+        )
+        t.start()
+        workers["scopus_search"] = t
 
 
-def ensure_korean_output(llm_model: str, answer: str) -> str:
-    if _needs_korean_rewrite(answer):
-        out = _rewrite_to_korean_only(llm_model, answer)
-        # If still mixed, do one more pass (prevents stubborn mixed-script outputs)
-        if out and _needs_korean_rewrite(out):
-            out = _rewrite_to_korean_only(llm_model, out)
-        return out
-    return answer
+def build_langchain_history(chat_messages):
+    """(16) 현재 채팅창 종료 전까지 맥락 유지
 
-
-# --- English->Korean helper: output both English and Korean versions ---
-from typing import Dict
-
-def english_then_korean(llm_model: str, answer: str) -> Dict[str, str]:
-    """Return both English and Korean versions.
-
-    Strategy:
-    - If answer already looks English, keep it as `en`.
-    - Otherwise rewrite to English first.
-    - Then translate EN -> natural Korean.
-    - UI should normally show only Korean; English can be shown in an expander.
+    - (요구사항) LLM 답변을 벡터DB에 넣지 않음
+    - Streamlit 세션 내에서는 chat_messages가 유지되므로 history로 전달하여 대화 일관성을 높입니다.
     """
-    llm = get_llm(llm_model)
+    from langchain_core.messages import HumanMessage, AIMessage
 
-    def _rewrite_to_english(text: str) -> str:
-        sys = (
-            "You are a technical writer. Rewrite the given text into clear, natural English only. "
-            "Do not include Korean, Japanese, Chinese, Turkish, Russian, or any other language. "
-            "Keep technical acronyms/standards/product names as-is (e.g., SDV, LLM, AI, ISO 26262, UNECE R155)."
-        )
-        prompt = ChatPromptTemplate.from_messages(
-            [("system", sys), ("human", "Rewrite into English only:\n\n{text}")]
-        )
-        try:
-            msg = prompt.invoke({"text": text})
-            out = llm.invoke(msg)
-            return getattr(out, "content", str(out)).strip()
-        except Exception:
-            return text
-
-    def _translate_en_to_ko(text_en: str) -> str:
-        sys = (
-            "당신은 전문 번역가이자 한국어 편집자입니다. 입력된 영어 텍스트를 의미를 유지한 채 "
-            "자연스럽고 매끄러운 한국어로 번역해 주세요. 외국어 문장을 섞지 말고, 존댓말을 사용하세요. "
-            "기술 약어/표준명/제품명(예: SDV, LLM, AI, ISO 26262, UNECE R155)은 필요할 때만 그대로 유지할 수 있습니다."
-        )
-        prompt = ChatPromptTemplate.from_messages(
-            [("system", sys), ("human", "다음 영어 텍스트를 한국어로 번역해 주세요:\n\n{en}")]
-        )
-        try:
-            msg = prompt.invoke({"en": text_en})
-            out = llm.invoke(msg)
-            return getattr(out, "content", str(out)).strip()
-        except Exception:
-            return text_en
-
-    # Heuristic: if the text contains a lot of Hangul, rewrite to English first
-    import re as _re
-    hangul = len(_re.findall(r"[가-힣]", answer or ""))
-    latin = len(_re.findall(r"[A-Za-z]", answer or ""))
-    if hangul > 0 and hangul >= max(10, latin // 2):
-        en = _rewrite_to_english(answer)
-    else:
-        en = (answer or "").strip()
-
-    ko = _translate_en_to_ko(en)
-    # Final safety: ensure output is Korean-only-ish
-    ko = ensure_korean_output(llm_model, ko)
-    return {"en": en, "ko": ko}
+    history = []
+    for m in chat_messages:
+        if m["role"] == "user":
+            history.append(HumanMessage(content=m["content"]))
+        else:
+            history.append(AIMessage(content=m["content"]))
+    return history
 
 
+# -------------------- UI --------------------
+ensure_dirs()
+st.set_page_config(page_title=APP_TITLE, layout="wide")
+init_app_state()
+start_background_workers_once()
 
-# =========================
-# 7) RAG chain
-# =========================
+st.title(APP_TITLE)
 
-
-def build_rag_chain(vs, llm_model: str):
-    retriever = vs.as_retriever(search_kwargs={"k": 5})
-
-    contextualize_q_system_prompt = (
-        "Given a chat history and the latest user question which might reference context in the chat history, "
-        "formulate a standalone question which can be understood without the chat history. "
-        "Do NOT answer the question, just reformulate it if needed and otherwise return it as is."
-    )
-
-    contextualize_q_prompt = ChatPromptTemplate.from_messages(
-        [
-            ("system", contextualize_q_system_prompt),
-            MessagesPlaceholder("history"),
-            ("human", "{input}"),
-        ]
-    )
-
-    qa_system_prompt = (
-        "You are a question-answering assistant. Use the retrieved Context to answer the user.\n"
-        "- Output MUST be English only. Do not include any Korean/Japanese/Chinese or other languages.\n"
-        "- Keep technical acronyms/standards/product names as-is (e.g., SDV, ISO 26262, LLM, AI, UNECE R155).\n"
-        "- If the Context is insufficient, say you don't know instead of guessing.\n\n"
-        "[Context]\n{context}"
-    )
-
-    qa_prompt = ChatPromptTemplate.from_messages(
-        [
-            ("system", qa_system_prompt),
-            MessagesPlaceholder("history"),
-            ("human", "{input}"),
-        ]
-    )
-
-    llm = get_llm(llm_model)
-
-    # (7) 검색 기반 질의 업데이트(히스토리 기반 재구성 가능)
-    if create_history_aware_retriever is not None:
-        history_aware_retriever = create_history_aware_retriever(llm, retriever, contextualize_q_prompt)
-    else:
-        # Fallback: retriever는 문자열 query를 받으므로 input만 전달
-        history_aware_retriever = RunnableLambda(lambda x: x["input"]) | retriever
-
-    def _format_docs(docs):
-        return "\n\n".join(getattr(d, "page_content", str(d)) for d in (docs or []))
-
-    def _build_inputs(x: Dict[str, Any]) -> Dict[str, Any]:
-        # RunnableWithMessageHistory가 주입하는 history는 그대로 보존
-        return {
-            "input": x.get("input", ""),
-            "history": x.get("history", []),
-        }
-
-    def _retrieve(x: Dict[str, Any]):
-        # history-aware retriever는 dict를 입력으로 받고 문서 리스트를 반환
-        return history_aware_retriever.invoke(x)
-
-    def _to_qa_vars(x: Dict[str, Any]) -> Dict[str, Any]:
-        docs = x.get("context_docs", []) or []
-        return {
-            "input": x.get("input", ""),
-            "history": x.get("history", []),
-            "context_docs": docs,
-            "context": _format_docs(docs),
-        }
-
-    def _final(x: Dict[str, Any]) -> Dict[str, Any]:
-        return {"answer": x.get("answer", ""), "context": x.get("context_docs", [])}
-
-    rag_chain = (
-        RunnableLambda(_build_inputs)
-        .assign(context_docs=RunnableLambda(_retrieve))
-        .assign(**{
-            "context": RunnableLambda(lambda x: _format_docs(x.get("context_docs", []))),
-        })
-        .assign(
-            answer=(
-                qa_prompt
-                | llm
-                | RunnableLambda(lambda m: getattr(m, "content", str(m)))
-            )
-        )
-        | RunnableLambda(_final)
-    )
-
-    return rag_chain
-
-
-def build_pure_llm_chain(llm_model: str):
-    #llm = ChatOllama(
-    #    model=llm_model,
-    #    temperature=0.0,
-    #    top_p=0.9,
-    #)
-    llm = get_llm(llm_model)
-
-    sys = (
-        "You are a helpful assistant. Output MUST be English only. "
-        "Do not include Korean/Japanese/Chinese or other languages. "
-        "Keep technical acronyms/standards/product names as-is when needed."
-    )
-    prompt_tpl = ChatPromptTemplate.from_messages(
-        [("system", sys), MessagesPlaceholder("history"), ("human", "{input}")]
-    )
-
-    chain = (
-        RunnablePassthrough
-        .assign(
-            prompt=RunnableLambda(
-                lambda x: prompt_tpl.invoke({
-                    "history": x.get("history", []),
-                    "input": x.get("input", ""),
-                })
-            )
-        )
-        .assign(answer=RunnableLambda(lambda x: llm.invoke(x["prompt"])))
-        | RunnableLambda(lambda x: {"answer": getattr(x["answer"], "content", str(x["answer"]))})
-    )
-    return chain
-
-
-
-
-# =========================
-# 9) Streamlit App
-# =========================
-
-
-
-st.set_page_config(page_title="TRAG BaseRAG_v3", layout="wide")
-
-# Runtime flags: prevent rerun while generating
-st.session_state.setdefault("_is_generating", False)
-st.session_state.setdefault("_gen_started_at", None)
-# Busy/switch control
-st.session_state.setdefault("_busy_chat_id", None)
-st.session_state.setdefault("_switch_to_chat_id", None)
-st.session_state.setdefault("_switch_requested_at", None)
-
-# If a previous run was interrupted (e.g., user switched chat / stopped the app while generating),
-# Streamlit might not execute `finally:` blocks and `_is_generating` can remain True forever.
-# This guard resets stale "generating" state so the UI won't be stuck.
-GEN_STALE_SEC = int(CFG.get("GENERATION_STALE_SEC", 180))
-now_ts = time.time()
-if st.session_state.get("_is_generating", False):
-    started = st.session_state.get("_gen_started_at")
-    busy_chat = st.session_state.get("_busy_chat_id")
-    if (started is None) or (busy_chat is None) or (now_ts - float(started) > GEN_STALE_SEC):
-        logger.info(
-            f"[GUARD] Reset stale generating state. started_at={started} now={now_ts} stale_sec={GEN_STALE_SEC}"
-        )
-        st.session_state["_is_generating"] = False
-        st.session_state["_gen_started_at"] = None
-        st.session_state["_busy_chat_id"] = None
-        st.session_state["_switch_to_chat_id"] = None
-        st.session_state["_switch_requested_at"] = None
-
-# Start background worker (Req 20)
-_worker_bus = start_worker_if_needed()
-# Drain worker->UI events (do not block)
-drain_worker_events(_worker_bus)
-
-# If config file missing, show guidance
-if not os.path.exists(CONFIG_FILE):
-    st.sidebar.warning("./config/config.py가 없습니다. 기본 템플릿을 생성합니다.")
-
-# Sidebar chat list - use trag.storage module
-chat_store_dir = get_chat_store_dir(CFG)
-init_chat_registry_state(chat_store_dir, logger)
-
-def get_chat_history(sid: str) -> StreamlitChatMessageHistory:
-    # One independent StreamlitChatMessageHistory per chat session
-    return StreamlitChatMessageHistory(key=f"chat_messages_{sid}")
-
-sidebar_chat_list_ui(chat_store_dir, logger, get_chat_history)
-
-# Apply scheduled switch only when not generating
-if not st.session_state.get("_is_generating", False):
-    sid = st.session_state.get("_switch_to_chat_id")
-    if sid and sid in st.session_state.get("chat_registry", {}):
-        st.session_state["active_chat_id"] = sid
-        st.session_state["_switch_to_chat_id"] = None
-        st.session_state["_switch_requested_at"] = None
+# Sidebar: chat list + new chat
+with st.sidebar:
+    st.header("Chats")
+    if st.button("➕ New chat", use_container_width=True):
+        new_id = create_new_chat()
+        st.session_state.active_chat_id = new_id
         st.rerun()
 
-# If a switch request is very old, clear it (prevents permanent "reserved" state)
-req_at = st.session_state.get("_switch_requested_at")
-if req_at and (time.time() - float(req_at) > int(CFG.get("GENERATION_STALE_SEC", 180))):
-    st.session_state["_switch_to_chat_id"] = None
-    st.session_state["_switch_requested_at"] = None
-
-# Sidebar: upload + manual sync
-st.sidebar.header("데이터")
-up = st.sidebar.file_uploader("PDF 업로드", type=["pdf"], accept_multiple_files=False)
-if up is not None:
-    save_uploaded_pdf(up, CFG, logger)
-
-if st.sidebar.button("지금 PDF/NEWS 동기화"):
-    try:
-        get_worker_bus()["cmd_q"].put({"type": "sync_now"})
-        st.sidebar.info("동기화 요청을 백그라운드 worker에 전달했습니다.")
-    except Exception as e:
-        st.sidebar.error(f"동기화 요청 실패: {e}")
-
-# Sidebar: show current config
-st.sidebar.header("설정")
-st.sidebar.caption(f"LLM={CFG['LLM_MODEL']} / EMB={CFG['EMBED_MODEL']}")
-st.sidebar.caption(f"chunk={CFG['CHUNK_SIZE']} overlap={CFG['CHUNK_OVERLAP']}")
-st.sidebar.caption(f"pdf_interval={CFG['PDF_SYNC_INTERVAL_SEC']}s news_interval={CFG['NEWS_CRAWL_INTERVAL_SEC']}s")
-st.sidebar.caption("뉴스 키워드:")
-for k in CFG["NEWS_KEYWORDS"]:
-    st.sidebar.caption(f"- {k}")
-st.sidebar.caption(f"config: {CONFIG_FILE}")
-
-# Worker status
-wstat = st.session_state.get("_worker_status", {}) or {}
-if wstat.get("busy"):
-    st.sidebar.warning("백그라운드 동기화 실행 중입니다.")
-else:
-    st.sidebar.success("백그라운드 동기화 대기 중입니다.")
-
-if wstat.get("last_ts"):
-    st.sidebar.caption(f"마지막 동기화: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(wstat['last_ts'])))}")
-st.sidebar.caption(f"최근 추가 PDF chunks: {wstat.get('pdf_added_chunks', 0)}")
-st.sidebar.caption(f"최근 생성 News files: {wstat.get('news_created_files', 0)}")
-st.sidebar.caption(f"최근 추가 News chunks: {wstat.get('news_added_chunks', 0)}")
-if wstat.get("last_error"):
-    st.sidebar.error(f"worker 오류: {wstat['last_error']}")
-
-# Optional autorefresh so periodic tasks can run without user input
-if bool(CFG["AUTO_REFRESH_ENABLED"]):
-    try:
-        from streamlit_autorefresh import st_autorefresh
-        st_autorefresh(interval=int(CFG["AUTO_REFRESH_TICK_SEC"]) * 1000, key="auto_refresh")
-    except Exception:
-        pass
-
-# Vectorstore (lazy open; created when needed for RAG)
-vs = None
-
-
-# Status
-pdf_count = len(list_pdfs(CFG))
-news_count = len(list_news_txts(CFG))
-
-st.header("TRAG Chatbot v01 💬📚")
-st.caption(
-    f"PDF: {pdf_count}개 / News txt: {news_count}개 / VectorDB: {CFG['VECTOR_DB']} ({vectordb_dir(CFG, CFG['EMBED_MODEL'])})"
-)
-st.caption(f"LLM: {CFG['LLM_MODEL']} / Embedding: {CFG['EMBED_MODEL']} / Log: {LOG_PATH}")
-
-# Choose chain: (9) no docs -> pure LLM
-no_docs = (pdf_count == 0 and news_count == 0)
-
-if no_docs:
-    chain = build_pure_llm_chain(CFG["LLM_MODEL"])
-else:
-    # Open vectorstore lazily with db_lock to avoid chroma concurrent access
-    with get_worker_bus()["db_lock"]:
-        vs = get_vectorstore(CFG, CFG["EMBED_MODEL"], logger)
-    chain = build_rag_chain(vs, CFG["LLM_MODEL"])
-
-# Per-session history (16)(17)(18)(19)
-session_id = st.session_state["active_chat_id"]
-if st.session_state.get("_last_logged_session") != session_id:
-    logger.info(f"[SESSION] active_chat_id={session_id}")
-    st.session_state["_last_logged_session"] = session_id
-
-chat_history = get_chat_history(session_id)
-hydrate_history(chat_store_dir, session_id, chat_history, logger)
-
-# Render history
-for msg in chat_history.messages:
-    st.chat_message(msg.type).write(msg.content)
-
-# Run chat
-if prompt := st.chat_input("질문을 입력하세요"):
-    st.chat_message("human").write(prompt)
-    # 답변 생성 시작
-    st.session_state["_is_generating"] = True
-    st.session_state["_gen_started_at"] = time.time()
-    st.session_state["_busy_chat_id"] = st.session_state.get("active_chat_id")
-    answer = ""
-
-    try:
-        with st.chat_message("ai"):
-            with st.spinner("Thinking..."):
-                if no_docs:
-                    resp = chain.invoke({"input": prompt, "history": chat_history.messages})
-                    answer = resp.get("answer", "")
-                    both = english_then_korean(CFG["LLM_MODEL"], answer)
-                    answer_en = both["en"]
-                    answer_ko = both["ko"]
-                    st.write(answer_ko)
-                    with st.expander("(원문) English 답변 보기"):
-                        st.write(answer_en)
-                    answer = answer_ko
-                else:
-                    conversational = RunnableWithMessageHistory(
-                        chain,
-                        get_chat_history,
-                        input_messages_key="input",
-                        history_messages_key="history",
-                        output_messages_key="answer",
-                    )
-                    try:
-                        with get_worker_bus()["db_lock"]:
-                            resp = conversational.invoke(
-                                {"input": prompt},
-                                config={"configurable": {"session_id": session_id}},
-                            )
-                    except Exception as e:
-                        logger.info(f"[CHAT] RAG invoke failed: {e}")
-                        resp = {"answer": f"답변 생성 중 오류가 발생했습니다: {e}", "context": []}
-
-                    answer = resp.get("answer", "")
-                    both = english_then_korean(CFG["LLM_MODEL"], answer)
-                    answer_en = both["en"]
-                    answer_ko = both["ko"]
-                    st.write(answer_ko)
-                    with st.expander("(원문) English 답변 보기"):
-                        st.write(answer_en)
-                    answer = answer_ko
-
-                    with st.expander("참고 문서 확인"):
-                        for doc in resp.get("context", []) or []:
-                            src = doc.metadata.get("source", "unknown source")
-                            st.markdown(src, help=doc.page_content)
-
-        # --- Auto-rename chat after first exchange using keywords ---
-        reg: Dict[str, str] = st.session_state.get("chat_registry", {})
-        current_title = reg.get(session_id, "")
-        # Only update if current title is "새 채팅" or starts with "Chat" (backward compatibility)
-        if current_title == "새 채팅" or (current_title or "").startswith("Chat"):
-            new_title = make_chat_title(prompt, answer)
-            st.session_state["chat_registry"][session_id] = new_title
-            save_chat_registry(chat_store_dir, st.session_state["chat_registry"], logger)
-            # Do NOT st.rerun() here; sidebar will reflect on next rerun
-
-        # ✅ Persist messages to disk so browser refresh won't lose them
-        try:
-            save_messages(chat_store_dir, session_id, chat_history.messages, logger)
-        except Exception:
-            pass
-
-    finally:
-        # 항상 생성 플래그를 내려 UI가 고착되지 않게 합니다.
-        st.session_state["_is_generating"] = False
-        st.session_state["_gen_started_at"] = None
-        st.session_state["_busy_chat_id"] = None
-
-        # 답변 생성이 끝났으면 예약된 전환을 즉시 반영합니다.
-        sid = st.session_state.get("_switch_to_chat_id")
-        if sid and sid in st.session_state.get("chat_registry", {}):
-            st.session_state["active_chat_id"] = sid
-            st.session_state["_switch_to_chat_id"] = None
-            st.session_state["_switch_requested_at"] = None
+    # 기존 채팅 목록 (18)
+    for cid, chat in sorted(st.session_state.chats.items(), key=lambda x: x[1]["created_at"], reverse=True):
+        label = chat["title"]
+        if st.button(label, key=f"chat_btn_{cid}", use_container_width=True):
+            st.session_state.active_chat_id = cid
             st.rerun()
 
-# Footer
-st.sidebar.divider()
-st.sidebar.caption(f"로그 파일: {LOG_PATH}")
+    st.divider()
+    st.subheader("VectorDB Status")
+    # VectorStore 초기화는 stats 조회를 위해 수행될 수 있으나, 임베딩(add_documents)은 하지 않습니다.
+    st.write(get_vectorstore().stats())
+
+    st.subheader("Workers")
+    st.write({k: (v.is_alive() if v else False) for k, v in st.session_state.workers.items()})
+
+    # ------------------------------------------------------------
+    # PDF 업로드
+    # - 업로드된 파일을 DATA_DIR(기본 ./data)에 저장
+    # - 저장 직후 pdf_watcher.run_once()를 호출하여 즉시 반영(현재 구현)
+    #   -> 운영상 원한다면 체크박스 옵션으로 즉시 임베딩을 켜/끄도록 바꾸는 것이 일반적입니다.
+    # ------------------------------------------------------------
+    st.subheader("Upload PDF")
+    up = st.file_uploader("Upload a PDF to ./data", type=["pdf"])
+    if up is not None:
+        save_path = os.path.join(DATA_DIR, up.name)
+        with open(save_path, "wb") as f:
+            f.write(up.getbuffer())
+        st.success(f"Saved: {save_path}")
+
+        # 업로드 직후 즉시 임베딩(현재 구현: 항상 실행)
+        # PdfWatcher가 '변경 없음'으로 판단하면 내부에서 스킵될 수 있습니다.
+        try:
+            st.session_state.pdf_watcher.run_once()
+        except Exception as e:
+            logger.exception(f"Immediate PDF embed failed err={e}")
+
+
+# Main chat area
+active_id = st.session_state.active_chat_id
+chat = st.session_state.chats[active_id]
+
+# ------------------------------------------------------------
+# 채팅 UI 렌더링
+# - chat["messages"]에 누적된 내용을 화면에 다시 그립니다.
+# - Streamlit은 rerun 방식이므로, 매 실행마다 전체 히스토리를 재출력합니다.
+# ------------------------------------------------------------
+for m in chat["messages"]:
+    with st.chat_message(m["role"]):
+        st.write(m["content"])
+
+user_input = st.chat_input("Ask something...")
+
+if user_input:
+    # 사용자 메시지 저장
+    chat["messages"].append({"role": "user", "content": user_input})
+    set_chat_title_if_needed(active_id)
+
+    with st.chat_message("user"):
+        st.write(user_input)
+
+    # 답변 생성
+    with st.chat_message("assistant"):
+        with st.spinner("Thinking..."):
+            try:
+                # 대화 맥락(history)을 LangChain 메시지 타입으로 변환합니다.
+                # (요구사항) LLM 답변은 벡터DB에 임베딩하지 않고, 세션 메모리로만 유지합니다.
+                history = build_langchain_history(chat["messages"][:-1])  # 마지막 user 입력은 LLM에 별도 전달
+                answer = generate_answer(user_input, history)
+            except Exception as e:
+                logger.exception(f"Answer generation failed err={e}")
+                answer = f"Error: {e}"
+
+            st.write(answer)
+
+    chat["messages"].append({"role": "assistant", "content": answer})

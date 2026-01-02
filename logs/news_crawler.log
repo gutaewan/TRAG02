@@ -1,0 +1,264 @@
+2026-01-02 00:18:53 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 00:18:53 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=0
+2026-01-02 00:18:54 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 00:18:54 | INFO | news_crawler | Naver search kw='AI 안전' items=0
+2026-01-02 00:18:55 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 00:18:55 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=0
+2026-01-02 00:18:56 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 00:18:56 | INFO | news_crawler | Naver search kw='SDV' items=0
+2026-01-02 00:18:56 | INFO | news_crawler | crawl_news_once total=40 unique=40
+2026-01-02 00:19:27 | INFO | news_crawler | sync_news_dir done: new_files=40 dup_skipped=0
+2026-01-02 02:34:50 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 02:34:50 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 02:34:51 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 02:34:51 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 02:34:52 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 02:34:52 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 02:34:53 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 02:34:53 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 02:34:54 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 02:34:54 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 02:34:54 | INFO | news_crawler | crawl_news_once total=100 unique=98
+2026-01-02 02:35:08 | WARNING | news_crawler | Body fetch failed url=http://www.ifs.or.kr/bbs/board.php?bo_table=News&wr_id=55467 err=HTTPSConnectionPool(host='www.ifs.or.kr', port=443): Max retries exceeded with url: /bbs/board.php?bo_table=News&wr_id=55467 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))
+2026-01-02 02:35:18 | WARNING | news_crawler | Body fetch failed url=http://www.ifs.or.kr/bbs/board.php?bo_table=News&wr_id=55460 err=HTTPSConnectionPool(host='www.ifs.or.kr', port=443): Max retries exceeded with url: /bbs/board.php?bo_table=News&wr_id=55460 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))
+2026-01-02 02:35:20 | INFO | news_crawler | sync_news_dir done: new_files=66 dup_skipped=32
+2026-01-02 03:32:04 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 03:32:04 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 03:32:05 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 03:32:06 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 03:32:06 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 03:32:07 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 03:32:07 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 03:32:07 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 03:32:08 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 03:32:09 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 03:32:09 | INFO | news_crawler | crawl_news_once total=100 unique=98
+2026-01-02 03:32:10 | INFO | news_crawler | sync_news_dir done: new_files=5 dup_skipped=93
+2026-01-02 03:45:51 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 03:45:52 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 03:45:53 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 03:45:53 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 03:45:54 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 03:45:54 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 03:45:55 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 03:45:55 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 03:45:56 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 03:45:56 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 03:45:56 | INFO | news_crawler | crawl_news_once total=100 unique=98
+2026-01-02 03:45:57 | INFO | news_crawler | sync_news_dir done: new_files=1 dup_skipped=97
+2026-01-02 03:57:10 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 03:57:11 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 03:57:12 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 03:57:12 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 03:57:13 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 03:57:13 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 03:57:14 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 03:57:14 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 03:57:15 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 03:57:15 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 03:57:15 | INFO | news_crawler | crawl_news_once total=100 unique=99
+2026-01-02 03:57:16 | INFO | news_crawler | sync_news_dir done: new_files=4 dup_skipped=95
+2026-01-02 04:10:57 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 04:10:57 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 04:10:58 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 04:10:58 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 04:10:59 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 04:10:59 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 04:11:00 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 04:11:00 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 04:11:01 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 04:11:01 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 04:11:01 | INFO | news_crawler | crawl_news_once total=100 unique=99
+2026-01-02 04:11:01 | INFO | news_crawler | sync_news_dir done: new_files=0 dup_skipped=99
+2026-01-02 04:21:07 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 04:21:07 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 04:21:08 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 04:21:08 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 04:21:09 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 04:21:09 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 04:21:10 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 04:21:10 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 04:21:11 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 04:21:11 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 04:21:11 | INFO | news_crawler | crawl_news_once total=100 unique=99
+2026-01-02 04:21:11 | INFO | news_crawler | sync_news_dir done: new_files=0 dup_skipped=99
+2026-01-02 04:31:16 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 04:31:16 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 04:31:17 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 04:31:17 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 04:31:18 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 04:31:18 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 04:31:19 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 04:31:19 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 04:31:20 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 04:31:20 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 04:31:20 | INFO | news_crawler | crawl_news_once total=100 unique=99
+2026-01-02 04:31:20 | INFO | news_crawler | sync_news_dir done: new_files=0 dup_skipped=99
+2026-01-02 04:41:25 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 04:41:26 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 04:41:27 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 04:41:27 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 04:41:28 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 04:41:28 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 04:41:29 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 04:41:29 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 04:41:30 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 04:41:30 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 04:41:30 | INFO | news_crawler | crawl_news_once total=100 unique=100
+2026-01-02 04:41:31 | INFO | news_crawler | sync_news_dir done: new_files=4 dup_skipped=96
+2026-01-02 04:56:18 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 04:56:18 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 04:56:19 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 04:56:19 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 04:56:20 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 04:56:21 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 04:56:21 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 04:56:21 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 04:56:22 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 04:56:23 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 04:56:23 | INFO | news_crawler | crawl_news_once total=100 unique=100
+2026-01-02 04:56:23 | INFO | news_crawler | sync_news_dir done: new_files=4 dup_skipped=96
+2026-01-02 05:11:44 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 05:11:44 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 05:11:45 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 05:11:45 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 05:11:46 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 05:11:46 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 05:11:46 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 05:11:47 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 05:11:47 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 05:11:47 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 05:11:47 | INFO | news_crawler | crawl_news_once total=100 unique=97
+2026-01-02 05:11:50 | INFO | news_crawler | sync_news_dir done: new_files=8 dup_skipped=89
+2026-01-02 05:30:40 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 05:30:40 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 05:30:41 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 05:30:41 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 05:30:42 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 05:30:42 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 05:30:43 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 05:30:43 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 05:30:44 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 05:30:45 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 05:30:45 | INFO | news_crawler | crawl_news_once total=100 unique=97
+2026-01-02 05:30:46 | INFO | news_crawler | sync_news_dir done: new_files=4 dup_skipped=93
+2026-01-02 05:42:55 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 05:42:55 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 05:42:56 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 05:42:56 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 05:42:57 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 05:42:57 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 05:42:58 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 05:42:58 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 05:42:59 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 05:42:59 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 05:42:59 | INFO | news_crawler | crawl_news_once total=100 unique=98
+2026-01-02 05:43:00 | INFO | news_crawler | sync_news_dir done: new_files=5 dup_skipped=93
+2026-01-02 05:57:32 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 05:57:32 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 05:57:33 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 05:57:33 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 05:57:34 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 05:57:34 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 05:57:35 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 05:57:35 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 05:57:36 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 05:57:36 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 05:57:36 | INFO | news_crawler | crawl_news_once total=100 unique=100
+2026-01-02 05:57:37 | INFO | news_crawler | sync_news_dir done: new_files=3 dup_skipped=97
+2026-01-02 06:09:53 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 06:09:53 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 06:09:54 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 06:09:54 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 06:09:55 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 06:09:55 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 06:09:56 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 06:09:56 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 06:09:57 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 06:09:57 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 06:09:57 | INFO | news_crawler | crawl_news_once total=100 unique=97
+2026-01-02 06:10:03 | INFO | news_crawler | sync_news_dir done: new_files=18 dup_skipped=79
+2026-01-02 06:34:04 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 06:34:04 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 06:34:05 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 06:34:05 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 06:34:06 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 06:34:06 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 06:34:08 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 06:34:08 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 06:34:09 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 06:34:09 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 06:34:09 | INFO | news_crawler | crawl_news_once total=100 unique=98
+2026-01-02 06:34:11 | INFO | news_crawler | sync_news_dir done: new_files=12 dup_skipped=86
+2026-01-02 06:53:49 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 06:53:49 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 06:53:50 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 06:53:50 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 06:53:51 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 06:53:51 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 06:53:52 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 06:53:52 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 06:53:53 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 06:53:54 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 06:53:54 | INFO | news_crawler | crawl_news_once total=100 unique=98
+2026-01-02 06:53:54 | INFO | news_crawler | sync_news_dir done: new_files=3 dup_skipped=95
+2026-01-02 07:05:57 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 07:05:57 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 07:05:58 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 07:05:58 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 07:05:59 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 07:05:59 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 07:06:00 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 07:06:00 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 07:06:01 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 07:06:01 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 07:06:01 | INFO | news_crawler | crawl_news_once total=100 unique=99
+2026-01-02 07:06:03 | INFO | news_crawler | sync_news_dir done: new_files=10 dup_skipped=89
+2026-01-02 07:27:43 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 07:27:43 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 07:27:44 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 07:27:44 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 07:27:45 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 07:27:45 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 07:27:46 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 07:27:46 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 07:27:47 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 07:27:47 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 07:27:47 | INFO | news_crawler | crawl_news_once total=100 unique=98
+2026-01-02 07:27:49 | INFO | news_crawler | sync_news_dir done: new_files=11 dup_skipped=87
+2026-01-02 08:04:38 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 08:04:38 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 08:04:39 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 08:04:39 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 08:04:40 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 08:04:40 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 08:04:41 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 08:04:41 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 08:04:42 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 08:04:42 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 08:04:42 | INFO | news_crawler | crawl_news_once total=100 unique=97
+2026-01-02 08:04:45 | INFO | news_crawler | sync_news_dir done: new_files=17 dup_skipped=80
+2026-01-02 08:34:05 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 08:34:05 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 08:34:06 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 08:34:07 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 08:34:07 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 08:34:08 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 08:34:09 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 08:34:09 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 08:34:10 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 08:34:10 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 08:34:10 | INFO | news_crawler | crawl_news_once total=100 unique=93
+2026-01-02 08:34:13 | INFO | news_crawler | sync_news_dir done: new_files=18 dup_skipped=75
+2026-01-02 09:00:35 | INFO | news_crawler | Google RSS kw='소프트웨어 공학' items=10
+2026-01-02 09:00:35 | INFO | news_crawler | Naver search kw='소프트웨어 공학' items=10
+2026-01-02 09:00:36 | INFO | news_crawler | Google RSS kw='AI 안전' items=10
+2026-01-02 09:00:36 | INFO | news_crawler | Naver search kw='AI 안전' items=10
+2026-01-02 09:00:37 | INFO | news_crawler | Google RSS kw='자동차 기능안전' items=10
+2026-01-02 09:00:37 | INFO | news_crawler | Naver search kw='자동차 기능안전' items=10
+2026-01-02 09:00:38 | INFO | news_crawler | Google RSS kw='SDV' items=10
+2026-01-02 09:00:38 | INFO | news_crawler | Naver search kw='SDV' items=10
+2026-01-02 09:00:39 | INFO | news_crawler | Google RSS kw='Ontology' items=10
+2026-01-02 09:00:39 | INFO | news_crawler | Naver search kw='Ontology' items=10
+2026-01-02 09:00:39 | INFO | news_crawler | crawl_news_once total=100 unique=97
+2026-01-02 09:00:42 | INFO | news_crawler | sync_news_dir done: new_files=18 dup_skipped=79

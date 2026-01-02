@@ -1,0 +1,7 @@
+TITLE: [르포]'경보 울리며 스스로 정지'…HD건설기계 AI 혁신 안전기술 - 네이트
+URL: https://news.google.com/rss/articles/CBMieEFVX3lxTE5LMWQzY2FjNVc3X0VMVnRkbUdpS0ZLM0pPeEtsRnhhWDd3MXAzLWdyaDg2cVo0SHAxVk9RQ3c4NEtXZl9LdE9tYjhmbU9ZcmNCa3VkS0N6MnIwZ2RjTDJGYWJZVmFqTG13NTF0UXh1R2ktX3lMXzFwaQ?oc=5
+SOURCE: google_news_rss
+QUERY: AI 안전
+EXTRACTION: minimal
+
+Google News

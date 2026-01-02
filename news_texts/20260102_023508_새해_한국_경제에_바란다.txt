@@ -1,0 +1,7 @@
+TITLE: 새해 한국 경제에 바란다
+URL: http://www.ifs.or.kr/bbs/board.php?bo_table=News&wr_id=55467
+SOURCE: naver_openapi
+QUERY: SDV
+EXTRACTION: minimal
+
+(본문 추출 실패/짧음. URL을 직접 확인해 주세요.)

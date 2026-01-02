@@ -1,0 +1,7 @@
+TITLE: 과기정통부, 카카오 ‘카나나’ AI 안전성 평가 진행…”글로벌 모델 대비 우수” - 아이티데일리
+URL: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1ZZXRGci1HYWhqeTd6X3pjdXQwVjQ5SUtITTVZZUNlVkQ5T1JfUkNDMVQ1QWlPSW5zYmRPMDVjakctUm03bHpReFVmZzRGY21ZVWF4UlFwYVBZd21EQ2l1eTl1TlRrblk?oc=5
+SOURCE: google_news_rss
+QUERY: AI 안전
+EXTRACTION: minimal
+
+Google News

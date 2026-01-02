@@ -1,0 +1,7 @@
+TITLE: [제조AI 이끄는 산업도시 울산 기업]덜 힘들고 더 안전한 일터 구축 - 경상일보
+URL: https://news.google.com/rss/articles/CBMibEFVX3lxTE1sbUxCR1lINUw0WjQyYUREaDBkMHNNVWUxQzZKUWlPRElvbEloV0RvYmdwZmdFb1NKNE1LOU95aDhVTHVrejYtam0xSEtuUmtHU1VtZWFUX0V3XzFudUVFVTctYUZfOF9pdWJIQQ?oc=5
+SOURCE: google_news_rss
+QUERY: AI 안전
+EXTRACTION: minimal
+
+Google News

@@ -1,0 +1,7 @@
+TITLE: 랍코리아, 한국인재뱅크와 손잡고 비전 AI 안전 솔루션 확산 나선다 - 산업일보
+URL: https://news.google.com/rss/articles/CBMiREFVX3lxTE40R2xSTDQ1Zmw4OXVsQ1BsdU5YdTVRNWF2MUtwenp0LWNNS1FheUx1bGdUV3JMUzJ6RE84LXZNcDZTZlB1?oc=5
+SOURCE: google_news_rss
+QUERY: AI 안전
+EXTRACTION: minimal
+
+Google News

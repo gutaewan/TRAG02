@@ -1,0 +1,7 @@
+TITLE: [시론] 농업 AI, 온톨로지에서 길을 찾다 - 농민신문
+URL: https://news.google.com/rss/articles/CBMiWkFVX3lxTE1saVFUWVlISU9CYWgzNndrcFhwNW93RDJabG5CSXk0czBhdGVnemJnUkgyX3hzeXlXd2toanlucFdZMWUxaEJKVHpKVkluYlpIWEdiSUlFMkNtUQ?oc=5
+SOURCE: google_news_rss
+QUERY: Ontology
+EXTRACTION: minimal
+
+Google News

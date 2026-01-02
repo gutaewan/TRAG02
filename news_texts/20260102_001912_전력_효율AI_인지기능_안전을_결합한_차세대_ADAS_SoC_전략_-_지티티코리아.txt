@@ -1,0 +1,7 @@
+TITLE: 전력 효율·AI 인지·기능 안전을 결합한 차세대 ADAS SoC 전략 - 지티티코리아
+URL: https://news.google.com/rss/articles/CBMiakFVX3lxTFA3V0c2QXcxQjk4OWppeEthNUlNMzhIVlBoaF9DdzRNNDhibVpPOHFMTmQ4d1NlTlJTVXBkcXdjZU1tMEx3NXpNRm5tcFhkajFzNFpoOHBLbG8yNGg5Ny1CdlhNWS1OSFBYVmc?oc=5
+SOURCE: google_news_rss
+QUERY: 자동차 기능안전
+EXTRACTION: minimal
+
+Google News

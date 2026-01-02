@@ -1,0 +1,7 @@
+TITLE: ‘SDV·AI·자율주행’이 여는 모빌리티 트렌드는? - 에너지신문
+URL: https://news.google.com/rss/articles/CBMickFVX3lxTFBVTUE1UnFLaXJTNU5FOW5NU0VkZ051TW00Ymw4MUo0OFp6ZGZGZzdwVjIydHI5M2xnT1NtMVl2akxEaHlQellZSWRQYTI5UzRETW1HY21OWTZQd29ZN0VuRmZKUHhUbC1QT1d0ZUFFcU1wZw?oc=5
+SOURCE: google_news_rss
+QUERY: SDV
+EXTRACTION: minimal
+
+Google News

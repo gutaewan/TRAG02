@@ -1,0 +1,7 @@
+TITLE: 내연기관의 종말, SDV의 부상…자동차 산업 판이 바뀐다 - 매일신문
+URL: https://news.google.com/rss/articles/CBMiYkFVX3lxTE9WcDMyWnhBcHprbTd1dG1TM2F5WDlqLW5pYWNNZ3lId0IzRmRlcFp3WXBJaFJaVWlLZno5MWJTeTM1elNhRGdDMUFvZGNidWZPbC1lVXdNeC1tWVJTSk9TOU1n?oc=5
+SOURCE: google_news_rss
+QUERY: SDV
+EXTRACTION: minimal
+
+Google News

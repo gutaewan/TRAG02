@@ -1,0 +1,7 @@
+TITLE: 딥테크 회사 '페르세우스', 자동차 기능 안전 최고 난이도 ISO 26262 'ASIL-D' 인증 획득 - 월간조선
+URL: https://news.google.com/rss/articles/CBMikAFBVV95cUxPNDhRRUtHNW1HZWRUeVlwWjJJRERxS3IyanlGb3FBOXZRVlRyQ1ZnS2l2NjVNdVBCNE9qdEZNeE1zZzVUTy1oTmV3cy1jbWVXSWp3Unc3RTd6T0d6VlpMdGtJQ0hkZWtwNUZkYVI1QlpnNGU0R1drSm5TQWV0dmZ1TFBfVWZCdDJfOTZ3aDZNVTU?oc=5
+SOURCE: google_news_rss
+QUERY: 자동차 기능안전
+EXTRACTION: minimal
+
+Google News

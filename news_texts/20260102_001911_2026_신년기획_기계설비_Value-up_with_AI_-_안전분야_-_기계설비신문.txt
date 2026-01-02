@@ -1,0 +1,7 @@
+TITLE: [2026 신년기획] 기계설비 Value-up with AI - 안전분야 - 기계설비신문
+URL: https://news.google.com/rss/articles/CBMibEFVX3lxTE1lY255TU9wWUxKTFY3SXJZZXdIalhjeUhhTzRiSi00WHZ4MWxyZ1FmZTZjZ3YwbXVhV1N1YUROQmVXZ2FscWs3bXVQUjZEdWhvYjZvdGhOVVlnZ1pRRVNnY3B0YURsV0RkN0FHVA?oc=5
+SOURCE: google_news_rss
+QUERY: AI 안전
+EXTRACTION: minimal
+
+Google News

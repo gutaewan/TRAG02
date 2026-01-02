@@ -1,0 +1,7 @@
+TITLE: [Chip&車] SDV 세상에서는 반도체가 더 중요하다 - carmgz.kr
+URL: https://news.google.com/rss/articles/CBMiZkFVX3lxTE1jdzk3SExZNTQ0cmYtSHRBaDRGNmJ0ZXVMdnBUYUU5a1Qzc2VkcWZlSXdSZlB0S0x5emRuRjl0ZFkyRmpLRXZkZ2J2Ti1tWG53aDh0ZWxQZjlxNG95NlQ4MXhpZEFvQQ?oc=5
+SOURCE: google_news_rss
+QUERY: SDV
+EXTRACTION: minimal
+
+Google News

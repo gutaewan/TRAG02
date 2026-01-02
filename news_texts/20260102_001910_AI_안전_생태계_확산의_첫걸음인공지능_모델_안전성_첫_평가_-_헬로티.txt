@@ -1,0 +1,7 @@
+TITLE: AI 안전 생태계 확산의 첫걸음...인공지능 모델 안전성 첫 평가 - 헬로티
+URL: https://news.google.com/rss/articles/CBMiX0FVX3lxTE1nT1VnbGlmYTRBaFdZbmg4YVdsd2lvZUsxVjc2NlhnTWZJTnRiLUhEX2cwbFFYbmZ5amh5TGVLZHN3eXIzeVVTemcyN3lVS1oyM3JESFRSdXNOY1RiS2w4?oc=5
+SOURCE: google_news_rss
+QUERY: AI 안전
+EXTRACTION: minimal
+
+Google News

@@ -1,0 +1,118 @@
+{
+  "files": {
+    "./data/AutomotiveSPICE_PAM_31_Korean.pdf": {
+      "path": "./data/AutomotiveSPICE_PAM_31_Korean.pdf",
+      "sha256": "082ae292ecd928060857455dc378556e342c0a9a3abfc75c719626a74e4f653e",
+      "mtime": 1767259294.7951112,
+      "size": 2926253
+    },
+    "./data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf": {
+      "path": "./data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf",
+      "sha256": "79b44dfa9aef116b5489a3f3a2fbe01f5580ec8dc68b89537d24648754b41b7d",
+      "mtime": 1767260683.4917033,
+      "size": 1693231
+    },
+    "./data/C781-revised-final.pdf": {
+      "path": "./data/C781-revised-final.pdf",
+      "sha256": "83df86f95348478f06e7cfae5065160cbe1b8e480437c65a791c481c2831a39a",
+      "mtime": 1767260609.0352244,
+      "size": 526490
+    },
+    "./data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf": {
+      "path": "./data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf",
+      "sha256": "664ce00f1fa0949f2451ce63b85dd7f8300da1a2f2ae34faf77740fafa7658fd",
+      "mtime": 1767260669.4631858,
+      "size": 951081
+    },
+    "./data/Data Fingerprinting with Similarity Digests.pdf": {
+      "path": "./data/Data Fingerprinting with Similarity Digests.pdf",
+      "sha256": "dcf591dba9db83531644ec98205c30eb041fc37b176436820b94839eda5fd630",
+      "mtime": 1767260623.503162,
+      "size": 268834
+    },
+    "./data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf": {
+      "path": "./data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf",
+      "sha256": "1b881fff5cbb2aae1613eb51f2bcaddb5d54a6bb6795112fa412016a227561dd",
+      "mtime": 1767260682.6221151,
+      "size": 219354
+    },
+    "./data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf": {
+      "path": "./data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf",
+      "sha256": "e1e6805ae3c4273cb2180dd4a366a18652bf1dc276b9aaec4e203ab1ff062fb6",
+      "mtime": 1767260653.4908216,
+      "size": 2588309
+    },
+    "./data/대한민국헌법(헌법)(제00010호)(19880225).pdf": {
+      "path": "./data/대한민국헌법(헌법)(제00010호)(19880225).pdf",
+      "sha256": "a79604699421854226032b3fcff9555cdb8faf8f084321faddcab7bf60e0d920",
+      "mtime": 1767261141.1591713,
+      "size": 159506
+    },
+    "/Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf": {
+      "path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf",
+      "sha256": "7cfcfc185c641335c122cb6f21afa4d909fee2d8c203a7884557be3557069eb6",
+      "mtime": 1767284681.5996168,
+      "size": 2567977
+    },
+    "/Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf": {
+      "path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf",
+      "sha256": "614599bb7bd327a668823fc540f8e48718814202b3c04302d7090584ecefd5b0",
+      "mtime": 1767284691.0942805,
+      "size": 5380275
+    },
+    "/Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf": {
+      "path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf",
+      "sha256": "4eb45b01e23bc59104a71ae466a68f914c6c42226481fd89439139f11cc54d23",
+      "mtime": 1767284700.6215973,
+      "size": 854062
+    },
+    "/Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf": {
+      "path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf",
+      "sha256": "082ae292ecd928060857455dc378556e342c0a9a3abfc75c719626a74e4f653e",
+      "mtime": 1767259294.7951112,
+      "size": 2926253
+    },
+    "/Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf": {
+      "path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf",
+      "sha256": "79b44dfa9aef116b5489a3f3a2fbe01f5580ec8dc68b89537d24648754b41b7d",
+      "mtime": 1767260683.4917033,
+      "size": 1693231
+    },
+    "/Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf": {
+      "path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf",
+      "sha256": "83df86f95348478f06e7cfae5065160cbe1b8e480437c65a791c481c2831a39a",
+      "mtime": 1767260609.0352244,
+      "size": 526490
+    },
+    "/Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf": {
+      "path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf",
+      "sha256": "664ce00f1fa0949f2451ce63b85dd7f8300da1a2f2ae34faf77740fafa7658fd",
+      "mtime": 1767260669.4631858,
+      "size": 951081
+    },
+    "/Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf": {
+      "path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf",
+      "sha256": "dcf591dba9db83531644ec98205c30eb041fc37b176436820b94839eda5fd630",
+      "mtime": 1767260623.503162,
+      "size": 268834
+    },
+    "/Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf": {
+      "path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf",
+      "sha256": "1b881fff5cbb2aae1613eb51f2bcaddb5d54a6bb6795112fa412016a227561dd",
+      "mtime": 1767260682.6221151,
+      "size": 219354
+    },
+    "/Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf": {
+      "path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf",
+      "sha256": "e1e6805ae3c4273cb2180dd4a366a18652bf1dc276b9aaec4e203ab1ff062fb6",
+      "mtime": 1767260653.4908216,
+      "size": 2588309
+    },
+    "/Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf": {
+      "path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf",
+      "sha256": "a79604699421854226032b3fcff9555cdb8faf8f084321faddcab7bf60e0d920",
+      "mtime": 1767261141.1591713,
+      "size": 159506
+    }
+  }
+}

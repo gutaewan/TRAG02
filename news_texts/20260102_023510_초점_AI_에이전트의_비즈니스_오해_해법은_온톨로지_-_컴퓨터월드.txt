@@ -1,0 +1,7 @@
+TITLE: [초점] AI 에이전트의 비즈니스 오해, 해법은 ‘온톨로지’ - 컴퓨터월드
+URL: https://news.google.com/rss/articles/CBMibEFVX3lxTE1TODhrMXE3ZFpKRWt0MENFQVRpQXJpZGU5NVMxOGZSc2huaGNLVTkySUFORmlwMDAwWmF0V2RJaUVGNWFva2NEeFYtZkRZekVtQTljRXNKMlBfS1FpWmgyZGdaV0FXX1QzazRsTA?oc=5
+SOURCE: google_news_rss
+QUERY: Ontology
+EXTRACTION: minimal
+
+Google News

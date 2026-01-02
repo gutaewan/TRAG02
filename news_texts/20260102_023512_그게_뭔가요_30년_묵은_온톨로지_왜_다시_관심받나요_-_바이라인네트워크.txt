@@ -1,0 +1,7 @@
+TITLE: [그게 뭔가요] 30년 묵은 ‘온톨로지’, 왜 다시 관심받나요? - 바이라인네트워크
+URL: https://news.google.com/rss/articles/CBMiTkFVX3lxTE9DLTBqczZGWndYVWJUUHFRVVFDR0lxRVZUbXJXUGZ4bjhvTXJHVDhIUGdHOFdXMHh0S2RlYUg1bFdBdGRTQmcyVUh0Z2QwUQ?oc=5
+SOURCE: google_news_rss
+QUERY: Ontology
+EXTRACTION: minimal
+
+Google News

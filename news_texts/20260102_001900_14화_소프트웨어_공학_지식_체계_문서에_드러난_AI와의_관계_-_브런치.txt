@@ -1,0 +1,7 @@
+TITLE: 14화 소프트웨어 공학 지식 체계 문서에 드러난 AI와의 관계 - 브런치
+URL: https://news.google.com/rss/articles/CBMiS0FVX3lxTE9yZDFKYjV1UlZzVzctZ0hKeTBsaHd5U2tKSS1SN1p2eWdHN2FWZ0xmZjR5cldsZVRIeDExeFFFeUtoQWd4cEcwMC1Vbw?oc=5
+SOURCE: google_news_rss
+QUERY: 소프트웨어 공학
+EXTRACTION: minimal
+
+Google News

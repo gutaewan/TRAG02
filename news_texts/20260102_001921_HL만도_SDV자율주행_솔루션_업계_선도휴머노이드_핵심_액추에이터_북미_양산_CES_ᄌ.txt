@@ -1,0 +1,7 @@
+TITLE: HL만도, SDV·자율주행 솔루션 '업계 선도'…'휴머노이드 핵심' 액추에이터 북미 양산 'CES 주목' - 프라임경제
+URL: https://news.google.com/rss/articles/CBMibEFVX3lxTE9lTjlqdmtTN0kzSlJsQXAwNzFza1NXVXlzdTZmeDNrWVU2WFZacFpsdlpnRFBLWEJzSGFDRXJublEzb0RBRk9OSlFPRkd0WUpXSEh6eFZjZDBaNGF0OGJoZkMyLXpJa3E4TEZiOA?oc=5
+SOURCE: google_news_rss
+QUERY: SDV
+EXTRACTION: minimal
+
+Google News

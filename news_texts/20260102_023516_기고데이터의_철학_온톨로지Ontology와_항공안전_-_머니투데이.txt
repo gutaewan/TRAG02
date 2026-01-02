@@ -1,0 +1,7 @@
+TITLE: [기고]데이터의 철학, 온톨로지(Ontology)와 항공안전 - 머니투데이
+URL: https://news.google.com/rss/articles/CBMibEFVX3lxTFBWb0RmNmdiTEw3dnNTOVg4ZlM0Tk1jZ1RIV3IwZ1JoSUxwZkNnbEI1R29HekI3V3FLVXl0aUFMY1p6c0lFTFp1Zmp0djh3ZXAwbk1JOXBvalEzQkQ2UkdrQU5KTGlmeFlEUHZicw?oc=5
+SOURCE: google_news_rss
+QUERY: Ontology
+EXTRACTION: minimal
+
+Google News

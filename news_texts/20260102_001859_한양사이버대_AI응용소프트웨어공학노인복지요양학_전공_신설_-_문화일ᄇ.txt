@@ -1,0 +1,7 @@
+TITLE: 한양사이버대, AI응용소프트웨어공학·노인복지요양학 전공 신설 - 문화일보
+URL: https://news.google.com/rss/articles/CBMiUEFVX3lxTE5RTm05LWdERjNBUWVFd0ZVeGxpNGFZRmZXdVpXT1BqdTBuUlN4dkEtRWI1ZnFNVU9Bbm4yS05UaXJEaVp5WDQydldIX1N3OFVY?oc=5
+SOURCE: google_news_rss
+QUERY: 소프트웨어 공학
+EXTRACTION: minimal
+
+Google News

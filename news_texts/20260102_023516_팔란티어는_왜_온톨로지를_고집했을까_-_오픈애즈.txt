@@ -1,0 +1,7 @@
+TITLE: 팔란티어는 왜 온톨로지를 고집했을까 - 오픈애즈
+URL: https://news.google.com/rss/articles/CBMiaEFVX3lxTFBpbjRBbDd5cXhGYW1tUGhTUnlPY1pLVHlrTENBZjg0SlpHbjZzNUFRYzNhVVVjeVg0NGRxR1ZNYUVybUNuMGIwYmR1RWc1SHhBU05nTk9TT05LUzZhVzZWYnljWXNCMmFh?oc=5
+SOURCE: google_news_rss
+QUERY: Ontology
+EXTRACTION: minimal
+
+Google News

@@ -1,0 +1,7 @@
+TITLE: 다가올 에이전틱 AI 사회, `온톨로지`가 핵심 열쇠인 까닭 - 디지털데일리
+URL: https://news.google.com/rss/articles/CBMiZEFVX3lxTE1RQlo0R0syLXNCcC0zNWNCa2lqalhuNmthLUFycVRRRXNibkRBcEVEcW5GbmJnV0I1RXpLYzl1NWNBX1F3Z3FCUmFRR2dZTzVXclpMWXNWaEpDaXNvX2FzemhLNzc?oc=5
+SOURCE: google_news_rss
+QUERY: Ontology
+EXTRACTION: minimal
+
+Google News

@@ -1,0 +1,7 @@
+TITLE: [2025 자동차 결산 ③] 'SDV' 전쟁...테슬라 잡으려면 '데이터 축적'이 열쇠 - 디지틀조선TV
+URL: https://news.google.com/rss/articles/CBMifEFVX3lxTE5oSEhmRHh2SkxDSkpsT2ZfRXBwdFBkalVUSkY5cEFZMjNkUkRKLUJRWFpaMG9YLTFwZWlmMG1neVpwdF9FQ2pqRjVFQmdobGM1TkFDUTM5UnU2MTFvOXQyZmNBZTdzSkdhRGl3YzJ6T3JYeHQ4UWpweEF3ZjM?oc=5
+SOURCE: google_news_rss
+QUERY: SDV
+EXTRACTION: minimal
+
+Google News

@@ -1,0 +1,7 @@
+TITLE: EU시장 진출 'AI 안전인증' 필수될 것 - v.daum.net
+URL: https://news.google.com/rss/articles/CBMiT0FVX3lxTE0xVGE4MkZtUzZHaGxlRFpuSFMxZkxHeld3VHFIN3h5S2dZU05uV3RhS0JacTYtRFVSWHVKaFRVQWJ6WGVGb2xaQWNKV2RKSDA?oc=5
+SOURCE: google_news_rss
+QUERY: AI 안전
+EXTRACTION: minimal
+
+Google News

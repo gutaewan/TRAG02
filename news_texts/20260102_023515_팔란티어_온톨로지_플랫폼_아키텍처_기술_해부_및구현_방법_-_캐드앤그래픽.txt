@@ -1,0 +1,7 @@
+TITLE: 팔란티어 온톨로지 플랫폼 아키텍처 기술 해부 및구현 방법 - 캐드앤그래픽스
+URL: https://news.google.com/rss/articles/CBMikAFBVV95cUxQRDhvdk1zZDdjV1FWNEVRS2syRUZpNnRyZXJyRHpFblBoRERVSTRZb003YWlRbzJNQjFzaEpqU3BzdUFXSF9aYzBQWnRQeml2Mlc1N293T1VFZjM4NGtVSEVYTC1MakVER2d5VWJGemtrblliQjQwcGp4S2RPMTB1Q2hZYk1XeE9OczlzQUs0c0g?oc=5
+SOURCE: google_news_rss
+QUERY: Ontology
+EXTRACTION: minimal
+
+Google News

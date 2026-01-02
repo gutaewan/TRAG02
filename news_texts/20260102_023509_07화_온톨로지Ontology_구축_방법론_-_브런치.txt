@@ -1,0 +1,7 @@
+TITLE: 07화 온톨로지(Ontology) 구축 방법론 - 브런치
+URL: https://news.google.com/rss/articles/CBMiRkFVX3lxTE4zZnpIenFESXJDVlh6d2pUblI0NDhQTmpxc1NLTXk5N05qNXAzR3dKemNTNllHbzI3cmJ6ZHZYTkZJNmhsd1E?oc=5
+SOURCE: google_news_rss
+QUERY: Ontology
+EXTRACTION: minimal
+
+Google News

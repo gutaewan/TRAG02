@@ -1,0 +1,40 @@
+{
+  "downloaded": {
+    "doi:10.1145/3695988": {
+      "pdf_path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf",
+      "ts": "20260102_012441",
+      "title": "Large Language Models for Software Engineering: A Systematic Literature Review",
+      "pdf_url": "https://arxiv.org/pdf/2308.10620",
+      "query": "Software engineering",
+      "query_orig": "소프트웨어 공학",
+      "source": "semantic_scholar"
+    },
+    "doi:10.1049/icp.2024.2527": {
+      "pdf_path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf",
+      "ts": "20260102_012451",
+      "title": "A robotaxi artificial intelligence safety failure",
+      "pdf_url": "https://wrap.warwick.ac.uk/id/eprint/186773/1/WRAP-Robotaxi-artificial-intelligence-safety-failure-24.pdf",
+      "query": "Artificial Intelligence Safety",
+      "query_orig": "AI 안전",
+      "source": "semantic_scholar"
+    },
+    "doi:10.1051/itmconf/20257004031": {
+      "pdf_path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf",
+      "ts": "20260102_012457",
+      "title": "Discussion on Artificial Intelligence Safety and Ethical Issues",
+      "pdf_url": "https://doi.org/10.1051/itmconf/20257004031",
+      "query": "Artificial Intelligence Safety",
+      "query_orig": "AI 안전",
+      "source": "semantic_scholar"
+    },
+    "doi:10.1017/cts.2024.551": {
+      "pdf_path": "/Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf",
+      "ts": "20260102_012500",
+      "title": "Source Data Verification (SDV) quality in clinical research: A scoping review",
+      "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/5C34E89421CBC4919F7CDCEDF5F410DA/S205986612400551Xa.pdf/div-class-title-source-data-verification-sdv-quality-in-clinical-research-a-scoping-review-div.pdf",
+      "query": "SDV",
+      "query_orig": "SDV",
+      "source": "semantic_scholar"
+    }
+  }
+}

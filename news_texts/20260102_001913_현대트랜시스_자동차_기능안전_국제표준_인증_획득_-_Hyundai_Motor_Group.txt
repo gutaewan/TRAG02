@@ -1,0 +1,7 @@
+TITLE: 현대트랜시스, 자동차 기능안전 국제표준 인증 획득 - Hyundai Motor Group
+URL: https://news.google.com/rss/articles/CBMib0FVX3lxTE0zY0dxVFUyc2VFRWhOcnd3ZU0zbGdfbko2eXhHclpGaURQVFpwckw0eVVOS2w1Q1JjMTdZb0lrSlVrZTVqS3BnRjNpNzBNQnA0ejN1czh3TG5obEV0bGFBTk5QTGh5MjZPQ3N1d3FNYw?oc=5
+SOURCE: google_news_rss
+QUERY: 자동차 기능안전
+EXTRACTION: minimal
+
+Google News

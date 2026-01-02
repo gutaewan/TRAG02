@@ -1,0 +1,7 @@
+TITLE: 온톨로지(Ontology) - 브랜드뉴스
+URL: https://news.google.com/rss/articles/CBMibEFVX3lxTE1ySWd0ZWN4ckhBSHAwdW9BTWNpZzFiWjlCWnoxbTAwYkRXaE1vLVVRaXBPMFNJTEJMbkdOb3N4WFQ0YktFdEdmMDZkdFZNcFdoMXVQNUNDcWVMTjBVNXZmRUM2SnBzLVU2VG9kWA?oc=5
+SOURCE: google_news_rss
+QUERY: Ontology
+EXTRACTION: minimal
+
+Google News

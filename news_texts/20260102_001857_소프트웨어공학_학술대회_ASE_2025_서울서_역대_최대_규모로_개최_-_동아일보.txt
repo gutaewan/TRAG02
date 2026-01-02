@@ -1,0 +1,7 @@
+TITLE: 소프트웨어공학 학술대회 ‘ASE 2025’, 서울서 역대 최대 규모로 개최 - 동아일보
+URL: https://news.google.com/rss/articles/CBMidkFVX3lxTE9QdF9odHhqZFR4bGVyZ29yd3FreHpnUkZUWmZXaDdlSjhuSThTY243bzhrQmZsZHBQbTBtUjd2Qm5tY2pPX0FCQzR1Qlc5Rzc3VEhnQ3N3ejNoLWxXRmJRN2FjMmZ1NTdtcjM3RU5JSnczSnhKU1HSAWZBVV95cUxQdFl1ZGk3T0xQdlR1VHA1M0xINDRWbUhGVWltTzhFTkgzU2ZtVnNtNWZ0Z2dxUnRPb1BYUnpCM3dnREdUVVl0ZG9xZklfdmktc2ZRMXhLUjU4SllqaEREclNJS0NuR3c?oc=5
+SOURCE: google_news_rss
+QUERY: 소프트웨어 공학
+EXTRACTION: minimal
+
+Google News

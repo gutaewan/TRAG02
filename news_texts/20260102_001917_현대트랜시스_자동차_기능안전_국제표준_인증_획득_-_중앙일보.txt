@@ -1,0 +1,7 @@
+TITLE: 현대트랜시스, 자동차 기능안전 국제표준 인증 획득 - 중앙일보
+URL: https://news.google.com/rss/articles/CBMiVkFVX3lxTFBDWGgyaldESDh2OVJfYVZxSVJmbHNPZTI1WG5ZaWR0VHdaUEVxMDhqeUZOOFNCYnhnVGtWZTlxQmI4NzJ5ZWpEY3pHR0NZNkhJMXNTNTdn?oc=5
+SOURCE: google_news_rss
+QUERY: 자동차 기능안전
+EXTRACTION: minimal
+
+Google News

@@ -1,0 +1,7 @@
+TITLE: 이준호의 인공지능이야기 &lt;22&gt; AI 전환, 왜 의미 설계(온톨로지)가 먼저...
+URL: http://www.ifs.or.kr/bbs/board.php?bo_table=News&wr_id=55460
+SOURCE: naver_openapi
+QUERY: Ontology
+EXTRACTION: minimal
+
+(본문 추출 실패/짧음. URL을 직접 확인해 주세요.)

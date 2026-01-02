@@ -1,0 +1,384 @@
+2026-01-02 02:35:20 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023454_세종사이버대_소프트웨어공학과_Dev_to_Career_특강_-_중앙일보.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 02:35:23 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023455_아마존_CTO_버너_보겔스의_2026년_이후_기술_전망.txt chunks=21 (chunk=1000, overlap=200)
+2026-01-02 02:37:23 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023456_순천향대_2026학년도_정시모집_최종_경쟁률_846대_1_기록.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 02:38:04 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023456_2026_정시_경쟁률_중앙대_2026학년도_정시모집_평균_경쟁률_693대_1.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 02:38:41 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023456_DGIST_교원_창업기업_2곳_스케일업_팁스_동시_선정.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 02:39:11 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023456_중앙대_정시_평균_경쟁률_693대_1.txt chunks=4 (chunk=1000, overlap=200)
+2026-01-02 02:39:31 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023456_순천향대_2026학년도_정시_경쟁률_846대_1.txt chunks=5 (chunk=1000, overlap=200)
+2026-01-02 02:39:55 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023456_한국트럼프주_TRUMPF_OPEN_HOUSE_2025_행사_성료_-_트럼프_만의_혁.txt chunks=15 (chunk=1000, overlap=200)
+2026-01-02 02:41:19 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023457_中_로봇_전공자_58만_美엔_개발자만_17만韓은_3만명으로_고군분투.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 02:42:31 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023457_정시_경쟁률_SKY_중_연세대만_뛴_까닭.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 02:43:36 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023457_중앙대_2026학년도_정시모집_경쟁률_693대_1_마감신설_지능형반도.txt chunks=5 (chunk=1000, overlap=200)
+2026-01-02 02:44:03 | ERROR | news_worker | Failed to embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023458_2026년_신년기획_AI는_이미_보고_있다_안전을_지키는_중소기업_기술의_현실6_-_글로벌경제신문.txt err=Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023458_2026년_신년기획_AI는_이미_보고_있다_안전을_지키는_중소기업_기술의_현실6_-_글로벌경제신문.txt
+Traceback (most recent call last):
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023458_2026년_신년기획_AI는_이미_보고_있다_안전을_지키는_중소기업_기술의_현실6_-_글로벌경제신문.txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 50, in run_once
+    docs = _load_text_docs(p)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 21, in _load_text_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023458_2026년_신년기획_AI는_이미_보고_있다_안전을_지키는_중소기업_기술의_현실6_-_글로벌경제신문.txt
+2026-01-02 02:44:03 | ERROR | news_worker | Failed to embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023459_신년사_임종식_경북교육감_안전AI학령인구_대응_교육_전환_-_경북일보.txt err=Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023459_신년사_임종식_경북교육감_안전AI학령인구_대응_교육_전환_-_경북일보.txt
+Traceback (most recent call last):
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023459_신년사_임종식_경북교육감_안전AI학령인구_대응_교육_전환_-_경북일보.txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 50, in run_once
+    docs = _load_text_docs(p)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 21, in _load_text_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023459_신년사_임종식_경북교육감_안전AI학령인구_대응_교육_전환_-_경북일보.txt
+2026-01-02 02:44:03 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023500_정신건강_위험_비판에오픈AI_안전_책임자_재모집_-_문화일보.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 02:44:04 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023501_정신건강_위험_비판받은_오픈AI_AI_안전_책임자_다시_모집_-_MSN.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 02:44:08 | ERROR | news_worker | Failed to embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023502_랍코리아_한국인재뱅크와_손잡고_비전_AI_안전_솔루션_확산_나선다_-_산업일보.txt err=Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023502_랍코리아_한국인재뱅크와_손잡고_비전_AI_안전_솔루션_확산_나선다_-_산업일보.txt
+Traceback (most recent call last):
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023502_랍코리아_한국인재뱅크와_손잡고_비전_AI_안전_솔루션_확산_나선다_-_산업일보.txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 50, in run_once
+    docs = _load_text_docs(p)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 21, in _load_text_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023502_랍코리아_한국인재뱅크와_손잡고_비전_AI_안전_솔루션_확산_나선다_-_산업일보.txt
+2026-01-02 02:44:08 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023503_테슬라_자율주행_낙관론에도_전기차_판매부진_지속_전망.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 02:45:20 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023503_현대百그룹_정지선_quot지주사_안정_넘어_지속_성장_기반_다지자quot.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 02:46:01 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023503_체인링크_2025년_온체인_금융의_표준으로_부상美_정부글로벌_대형.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 02:47:06 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023503_황종성_NIA_원장_quot2026년은_공공_AX_성과_창출의_원년AI_3강_도약_견인.txt chunks=9 (chunk=1000, overlap=200)
+2026-01-02 02:47:55 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023504_안전관리부터_교육까지돌봄_돕는_AI_로봇.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 02:49:01 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023504_에타일렉트로닉스_로봇_무선전력전송_기술_상용화_공로_과기부_장관.txt chunks=5 (chunk=1000, overlap=200)
+2026-01-02 02:49:26 | ERROR | news_worker | Failed to embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023504_건국대병원_신현진_교수팀_안구_사진_분석을_통한_뇌신경_마비_진단_인.txt err=Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023504_건국대병원_신현진_교수팀_안구_사진_분석을_통한_뇌신경_마비_진단_인.txt
+Traceback (most recent call last):
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023504_건국대병원_신현진_교수팀_안구_사진_분석을_통한_뇌신경_마비_진단_인.txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 50, in run_once
+    docs = _load_text_docs(p)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 21, in _load_text_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023504_건국대병원_신현진_교수팀_안구_사진_분석을_통한_뇌신경_마비_진단_인.txt
+2026-01-02 02:49:26 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023504_신년사_박상형_한전KDN_사장_quot2026년_AI_전환_선도하는_에너지_ICT_개.txt chunks=9 (chunk=1000, overlap=200)
+2026-01-02 02:50:17 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023504_AI_버블정부_부채_올해_세계_경제의_뇌관.txt chunks=14 (chunk=1000, overlap=200)
+2026-01-02 02:51:40 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023505_김해시_자동차_산업_고도화_미래차_전환_탄력_외.txt chunks=10 (chunk=1000, overlap=200)
+2026-01-02 02:52:41 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023505_내연기관차서_전기차_바꾸면_보조금_최대_680만원.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 02:53:12 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023505_신년사_천안시장_권한대행_부시장_김석필.txt chunks=33 (chunk=1000, overlap=200)
+2026-01-02 02:54:55 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023506_현대차주_아산공장_아산시에_성금_1억4000만원_전달.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 02:55:42 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023506_신년사강인한_馬처럼_불굴의_의지로_행복도시_도약.txt chunks=14 (chunk=1000, overlap=200)
+2026-01-02 02:57:02 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023506_휘발유차_매각하고_전기차_사면_보조금_100만원_더_준다.txt chunks=13 (chunk=1000, overlap=200)
+2026-01-02 02:58:18 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023506_삼중고지역기업_위한_종합_지원체계_구축.txt chunks=20 (chunk=1000, overlap=200)
+2026-01-02 03:01:50 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023506_신년호_특집_대구경북신공항_신_실크로드_연다.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 03:02:58 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023506_신년사_천안시장_권한대행_김석필_부시장.txt chunks=13 (chunk=1000, overlap=200)
+2026-01-02 03:04:16 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023506_자동차株_내년_밸류_재평가_증권가_현대차_SDV_전환_주목_투자의_맥_-_meconomynewscom.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 03:04:18 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023507_SDVAI자율주행이_여는_모빌리티_트렌드는_-_에너지신문.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 03:04:20 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023508_통합_신공항_중심_거대_경제권_조성_총력.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 03:05:33 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023508_수출_7000억불_시대의_경고반도체_외골수_벗어나_제조AI로_직.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 03:06:41 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023508_새해_한국_경제에_바란다.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 03:06:42 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023508_미리보는_CES_2026하모빌리티_새로운_AI_생태계로_진화.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 03:07:52 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023508_내연기관의_종말_SDV의_부상자동차_산업_판이_바뀐다.txt chunks=13 (chunk=1000, overlap=200)
+2026-01-02 03:09:10 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023508_모빌리티_산업_재편이_바꾼_글로벌_경제_지도.txt chunks=13 (chunk=1000, overlap=200)
+2026-01-02 03:10:27 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023508_너무_정직한_정의선_회장_내년_신년사에선_파격을_기대한다.txt chunks=13 (chunk=1000, overlap=200)
+2026-01-02 03:11:43 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023509_가전_시장_둔화_속삼성LG_전장으로_사업_무게중심_이동.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 03:12:13 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023509_미래차_패권다툼_전기서_SDV로_자율주행_국가_대항전_개막.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 03:13:23 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023509_2026_신년호AI전환_속도전_돌입한_대기업들사업_구조조정_속_노동.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 03:13:55 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023509_07화_온톨로지Ontology_구축_방법론_-_브런치.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 03:13:56 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023510_초점_AI_에이전트의_비즈니스_오해_해법은_온톨로지_-_컴퓨터월드.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 03:13:58 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023511_온톨로지Ontology_-_브랜드뉴스.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 03:14:00 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023511_다가올_에이전틱_AI_사회_온톨로지가_핵심_열쇠인_까닭_-_디지털데일리.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 03:14:02 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023512_그게_뭔가요_30년_묵은_온톨로지_왜_다시_관심받나요_-_바이라인네트워크.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 03:14:03 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023513_삼성SDS_팔란티어_따라간다협업SW에_온톨로지_적용_검토_-_디일렉.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 03:14:05 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023514_시론_농업_AI_온톨로지에서_길을_찾다_-_농민신문.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 03:14:07 | ERROR | news_worker | Failed to embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023515_팔란티어_온톨로지_플랫폼_아키텍처_기술_해부_및구현_방법_-_캐드앤그래픽스.txt err=Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023515_팔란티어_온톨로지_플랫폼_아키텍처_기술_해부_및구현_방법_-_캐드앤그래픽스.txt
+Traceback (most recent call last):
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023515_팔란티어_온톨로지_플랫폼_아키텍처_기술_해부_및구현_방법_-_캐드앤그래픽스.txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 50, in run_once
+    docs = _load_text_docs(p)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 21, in _load_text_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023515_팔란티어_온톨로지_플랫폼_아키텍처_기술_해부_및구현_방법_-_캐드앤그래픽스.txt
+2026-01-02 03:14:07 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023516_팔란티어는_왜_온톨로지를_고집했을까_-_오픈애즈.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 03:14:09 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023516_기고데이터의_철학_온톨로지Ontology와_항공안전_-_머니투데이.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 03:14:11 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023517_인사이트온_AI_개발_툴_라이브_캔버스_출시.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 03:15:17 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023517_AI_유니온_모니터_찢고_나온_AIquot2026년은_현실로_진격quot.txt chunks=18 (chunk=1000, overlap=200)
+2026-01-02 03:17:02 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023517_2026_신년기획_기계설비_Value-up_with_AI_-_유지관리분야.txt chunks=9 (chunk=1000, overlap=200)
+2026-01-02 03:17:51 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023518_NEOALI_a_startup_that_develops_high-end_AI-technology-based_.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 03:18:10 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023518_와이와이소프트_블록체인_공급망_인텔리전스_AWS_SaaS_출시.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 03:18:45 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023518_이준호의_인공지능이야기_lt22gt_AI_전환_왜_의미_설계온톨로지가_먼저.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 03:18:47 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023518_강소기업이_간다_데이터_주권과_인간_성장의_해법을_제시하는_인.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 03:19:30 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023518_김문정_개인전_잇고_풀고_비우고관계와_여백의_미학.txt chunks=9 (chunk=1000, overlap=200)
+2026-01-02 03:20:02 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023520_심사역_투자노트_임상민_에이티넘인베_이사와_사이오닉AI.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 03:20:47 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_023520_quot주식_대신_사러_왔어요quot_2030_개미들_오픈런뜻밖의_완판_트렌드.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 03:21:59 | INFO | news_worker | [VectorDB Updated] stats={'count': 2816, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 03:32:10 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_033209_정명근_화성특례시장_quot4개_구청_체제로_더_새로운_화성_도약quot.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 03:32:52 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_033209_비탈릭_부테린_이더리움_단기_유행보다_분산형_월드컴퓨터_본래_비전.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 03:33:55 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_033209_조용익_부천시장_quot민생안전성장_세_축으로_부천_도약quot.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 03:34:31 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_033209_도성훈_인천광역시교육감_2026년_인천교육_비전_제시.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 03:35:03 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_033210_quot16형인데_1199gquotLG_그램_항공_소재_입고_멀티_AI로_무장.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 03:35:46 | INFO | news_worker | [VectorDB Updated] stats={'count': 2855, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 03:45:57 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_034556_비트코인_반감기_이후_첫_연간_손실4년_사이클_공식_무너졌다.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 03:47:05 | INFO | news_worker | [VectorDB Updated] stats={'count': 2866, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 03:57:16 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_035715_정명근_화성특례시장_106만_시민의_힘으로_미래_연다.txt chunks=9 (chunk=1000, overlap=200)
+2026-01-02 03:58:11 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_035715_조용익_부천시장_신년사_시민의_삶_최우선부천_도약_계속.txt chunks=10 (chunk=1000, overlap=200)
+2026-01-02 03:59:06 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_035715_2026년_옹스트롬_반도체_경쟁_개막_파운드리_20_생존_게임.txt chunks=9 (chunk=1000, overlap=200)
+2026-01-02 03:59:56 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_035716_최대호_안양시장_AI_시대_시민_행복_키우는_스마트_안양_구현.txt chunks=10 (chunk=1000, overlap=200)
+2026-01-02 04:00:52 | INFO | news_worker | [VectorDB Updated] stats={'count': 2904, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 04:41:31 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_044130_인도_중앙은행_스테이블코인_강력_경고CBDC_도입_필요성_재확인.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 04:42:39 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_044131_AI가_인간_뛰어넘는_특이점_시작됐거나_곧_온다.txt chunks=13 (chunk=1000, overlap=200)
+2026-01-02 04:43:52 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_044131_韓_은행대출_3분의1이_주담대_토스-배민같은_유니콘_못_키워.txt chunks=13 (chunk=1000, overlap=200)
+2026-01-02 04:45:08 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_044131_오늘_518민주묘지서_광주-전남_행정통합_외친다.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 04:46:13 | INFO | news_worker | [VectorDB Updated] stats={'count': 2952, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 04:56:23 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_045623_최대호_안양시장_2026년_AI_기반_스마트_안양_본격화_선언.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 04:57:01 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_045623_연간_200만대_가능_중국_틈바구니_홀로_빛난_연매출_650억_K-드론.txt chunks=14 (chunk=1000, overlap=200)
+2026-01-02 04:58:24 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_045623_글로벌_비즈_브리핑_버핏_60년_만에_은퇴누적수익률_610만_外.txt chunks=18 (chunk=1000, overlap=200)
+2026-01-02 05:00:08 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_045623_병오년_새해_신년사_2026_신년특집.txt chunks=16 (chunk=1000, overlap=200)
+2026-01-02 05:01:39 | INFO | news_worker | [VectorDB Updated] stats={'count': 3006, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 05:11:50 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_051147_단독_중_첨단산업_굴기반도체_경쟁력마저_한국_따라잡았다.txt chunks=14 (chunk=1000, overlap=200)
+2026-01-02 05:13:15 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_051147_2026_Tech_Trend.txt chunks=14 (chunk=1000, overlap=200)
+2026-01-02 05:14:39 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_051148_테더_비트코인_BTC_8888개_추가_매입84억_달러어치_보유하며_약세.txt chunks=10 (chunk=1000, overlap=200)
+2026-01-02 05:15:37 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_051148_정의선의_장호_체제_2년_차관세ㆍ전동화ㆍSDV_대응_골든타임.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 05:16:48 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_051148_기재부_분리_D-DAY_①_18년_만에_부활한_재경부국고세제외환_고.txt chunks=13 (chunk=1000, overlap=200)
+2026-01-02 05:18:04 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_051149_야고부-김수용_가짜_광고.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 05:19:09 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_051149_쇠락해_가는_한국_화학공업_산업을_부활시키겠다는_20대_창업가의_아이.txt chunks=14 (chunk=1000, overlap=200)
+2026-01-02 05:20:33 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_051149_정의선의_장호_체제_2년_차관세전동화SDV_대응_골든타임_-_네이트.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 05:20:35 | INFO | news_worker | [VectorDB Updated] stats={'count': 3095, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 05:30:46 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_053045_트러스트_월렛_확장_해킹_피해_97억_원보상_검증_지연_크롬_배포_오.txt chunks=10 (chunk=1000, overlap=200)
+2026-01-02 05:31:49 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_053045_신상진_성남시장_2026_신년사서_공정_회복글로벌_스마트도시_완성.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 05:32:21 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_053045_정의선의_장호_체제_2년_차관세ㆍ전동화ㆍSDV_대응_골든타임_-_이투데이.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 05:32:23 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_053046_가격_파괴_앞세운_테슬라현대차ㆍ기아_안방_뺏길라.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 05:32:50 | INFO | news_worker | [VectorDB Updated] stats={'count': 3118, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 05:43:00 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_054259_르포경보_울리며_스스로_정지HD건설기계_AI_혁신_안전기술_-_네이트.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 05:43:05 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_054300_보건복지부_RampD예산_1조652억원신규사업_14개.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 05:43:40 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_054300_르포경보_울리며_스스로_정지HD건설기계_AI_혁신_안전기술.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 05:44:52 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_054300_로봇경비의_새벽순찰_동행화재_예방환자_보고도_척척르포.txt chunks=15 (chunk=1000, overlap=200)
+2026-01-02 05:46:23 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_054300_산업현장_지키고_있는_로봇들피지컬_AI는_이미_현실.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 05:47:27 | INFO | news_worker | [VectorDB Updated] stats={'count': 3163, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 05:57:37 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_055736_XRP_커뮤니티_내_신뢰_갈등_고조100달러_예측_Claver_조작_의혹_정면.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 05:58:44 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_055737_차준택_부평구청장_2026년_구민_체감_변화_본격화.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 05:59:15 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_055737_中_로보택시_중동_무인_시대_주역으로_2026년_1000대_투입.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 05:59:47 | INFO | news_worker | [VectorDB Updated] stats={'count': 3186, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 06:10:03 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060957_SS_신년기획①_제로백_대신_넷플릭스현대차_X_삼성LG_도로_위.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 06:11:16 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060957_메이드_인_재팬에서_메이드_위드_재팬으로_이지수_소장의_슈퍼컴퓨.txt chunks=9 (chunk=1000, overlap=200)
+2026-01-02 06:12:04 | ERROR | news_worker | Failed to embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060957_제조AI_이끄는_산업도시_울산_기업덜_힘들고_더_안전한_일터_구축_-_경상일보.txt err=Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060957_제조AI_이끄는_산업도시_울산_기업덜_힘들고_더_안전한_일터_구축_-_경상일보.txt
+Traceback (most recent call last):
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060957_제조AI_이끄는_산업도시_울산_기업덜_힘들고_더_안전한_일터_구축_-_경상일보.txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 50, in run_once
+    docs = _load_text_docs(p)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 21, in _load_text_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060957_제조AI_이끄는_산업도시_울산_기업덜_힘들고_더_안전한_일터_구축_-_경상일보.txt
+2026-01-02 06:12:04 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060958_신년사_quot의료_붕괴_회복까지_510년지금_골든타임quot.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 06:12:33 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060958_대한민국_재도약_중벤스로④인터뷰류영재_서스틴베스트_대표_quot국민.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 06:13:09 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060958_AX_스타트업_현장밀착형_설루션K-산업_혁신_이끈다.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 06:13:34 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060959_메트로신문_1월_2일자_한줄뉴스.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 06:14:16 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060959_신년기획_기술은_있는데_자금이_없다신산업의_금융_병목.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 06:14:55 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060959_전통_제조업_탈피한_HD현대_AI_초격차_쾌속_항진.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 06:15:27 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060959_문송천의_디지털_산책_잠근_대문_털린_안방_쿠팡_사태_진짜_정체.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 06:16:28 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060959_AI_유니온_내_대출이자_AI가_알아서_깎아준다금융권에_능동.txt chunks=14 (chunk=1000, overlap=200)
+2026-01-02 06:17:51 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_060959_버추얼_트윈_기업_지속가능성_높인다.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 06:19:01 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_061000_칼럼_2026년_AI웹30제로트러스트가_여는_초신뢰_사회.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 06:19:30 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_061001_1_오차도_잡았다_인공_태양_완성한_조선업_최연소_명장.txt chunks=14 (chunk=1000, overlap=200)
+2026-01-02 06:20:52 | ERROR | news_worker | Failed to embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_061001_테슬라_손_잡고_SDV로_넓히는_삼성전자하만현대차-엔비디아_진영과_대비_-_인베스트조선.txt err=Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_061001_테슬라_손_잡고_SDV로_넓히는_삼성전자하만현대차-엔비디아_진영과_대비_-_인베스트조선.txt
+Traceback (most recent call last):
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_061001_테슬라_손_잡고_SDV로_넓히는_삼성전자하만현대차-엔비디아_진영과_대비_-_인베스트조선.txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 50, in run_once
+    docs = _load_text_docs(p)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 21, in _load_text_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_061001_테슬라_손_잡고_SDV로_넓히는_삼성전자하만현대차-엔비디아_진영과_대비_-_인베스트조선.txt
+2026-01-02 06:20:52 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_061002_미리보는_CES자율주행부터_로보틱스까지진짜_혁신은_움직이는_AI.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 06:21:34 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_061002_CEO는_파리_목숨_전략은_오락가락_비전_실종된_현대오토에버.txt chunks=13 (chunk=1000, overlap=200)
+2026-01-02 06:22:51 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_061003_국산_SUV_아성_흔드나수입차_쎈_놈들이_온다.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 06:23:59 | INFO | news_worker | [VectorDB Updated] stats={'count': 3338, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 06:34:11 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_063409_신년기획-AI_레볼루션④_행동하는_인공지능피지컬AI_몰려온다.txt chunks=15 (chunk=1000, overlap=200)
+2026-01-02 06:35:49 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_063409_중앙대_2026_정시_마감_1만_4616명_지원평균_693대1다군소프트웨.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 06:36:27 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_063409_팩트체크_성인도_키_10cm_크는_약AI로_더_교묘해진_온라인_허위_광.txt chunks=16 (chunk=1000, overlap=200)
+2026-01-02 06:38:01 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_063409_삼성_P5_현장_새벽녘_1만_일꾼_운집_장관quot꿈이_현실로quot르포.txt chunks=13 (chunk=1000, overlap=200)
+2026-01-02 06:39:21 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_063409_신년사_트렌드로_본_2026년은보건의료_대전환의_해.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 06:40:08 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_063410_외신_헤드라인_워런_버핏_60년_만에_버크셔_CEO_퇴임.txt chunks=13 (chunk=1000, overlap=200)
+2026-01-02 06:41:21 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_063410_K-제약바이오_새해_화두는_비만AI_신약_개발.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 06:41:54 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_063410_비트코인_3년_만에_연간_수익률_마이너스_전환.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 06:42:21 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_063410_AI로봇빌트인까지_새해_K-가전_트렌드는.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 06:42:51 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_063410_리바운스_코리아_성장궤도_복귀양질의_일자리_창출.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 06:43:16 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_063410_AI가_꼽은_2025년_건설업_키워드디지털ㆍ친환경ㆍ안전.txt chunks=5 (chunk=1000, overlap=200)
+2026-01-02 06:43:38 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_063411_현대오토에버_자동차_공인검사기관_선정_SW_검증_사업_본격화_-_MSN.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 06:43:44 | INFO | news_worker | [VectorDB Updated] stats={'count': 3440, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 06:53:54 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_065354_2026_신년사_배경훈_부총리_quot과학기술과_AI가_국가_운명_바꾼다quot.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 06:54:38 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_065354_안구_사진_분석_통한_뇌신경_마비_진단_인공지능_기술_개발.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 06:55:08 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_065354_2026신년사_이진우_대한의학회장_quot2026년_의료계_방향_재정립해야_할.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 06:55:51 | INFO | news_worker | [VectorDB Updated] stats={'count': 3461, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 07:06:03 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_070601_연말연시_중심에_선_홍대_레드로드_마포구_안전과_관광_두_마리_토끼.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 07:07:16 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_070602_AI_패권_경쟁_소프트웨어에서_갈린다quotSW_생태계_경쟁력이_곧_AI_경쟁.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 07:08:23 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_070602_비만_신약에서_CDMO_초격차까지한국_바이오_기술력_입증의_해_건.txt chunks=13 (chunk=1000, overlap=200)
+2026-01-02 07:09:39 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_070602_2026_전망_⑳정책_자본_유입으로_일감_증가_기대건설경기_회복은.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 07:10:22 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_070602_2026_전망_배터리_EV_성장_둔화_지속ESS서_만회.txt chunks=14 (chunk=1000, overlap=200)
+2026-01-02 07:11:43 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_070602_암을_기억하는_개인_맞춤형_항암_백신_길_열리다.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 07:12:44 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_070602_르포quot쇳물_찌꺼기_긁던_손목_통증과_이별quot_AI와_동행하는_포스코_김.txt chunks=14 (chunk=1000, overlap=200)
+2026-01-02 07:14:04 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_070602_르포quot대한항공_예지정비팀_신기神氣가_있냐고_물어봐요quot.txt chunks=14 (chunk=1000, overlap=200)
+2026-01-02 07:15:26 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_070602_2026_신년사_박상형_한전KDN_사장.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 07:16:11 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_070603_quot우리도_챗GPT_도입했는데quot_왜_혁신_아이디어_안_나올까_스페셜리스.txt chunks=15 (chunk=1000, overlap=200)
+2026-01-02 07:17:38 | INFO | news_worker | [VectorDB Updated] stats={'count': 3582, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 07:27:49 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072747_전문_이상근_고성군수_2026년_신년사.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 07:28:40 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072747_백민훈_한국원자력연구원_소장_제12대_한국방사성폐기물학회장_취임.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 07:29:13 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072748_LG부터_현대차까지K-휴머노이드_CES_출정식.txt chunks=13 (chunk=1000, overlap=200)
+2026-01-02 07:30:24 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072748_Who_Is_이재명_대한민국_대통령.txt chunks=187 (chunk=1000, overlap=200)
+2026-01-02 07:49:57 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072748_최혁준_신임_경주부시장_취임_포스트_APEC_시대_성공적_준비에_역량_집.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 07:51:00 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072748_경기도_노후_공동주택_주거환경_개선에_152억원_투입.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 07:52:03 | ERROR | news_worker | Failed to embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072748_신년사_정지선_현대백화점그룹_회장_quot그룹의_축적된_본원적_경쟁력_통.txt err=Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072748_신년사_정지선_현대백화점그룹_회장_quot그룹의_축적된_본원적_경쟁력_통.txt
+Traceback (most recent call last):
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072748_신년사_정지선_현대백화점그룹_회장_quot그룹의_축적된_본원적_경쟁력_통.txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 50, in run_once
+    docs = _load_text_docs(p)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/news_crawl_worker.py", line 21, in _load_text_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading /Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072748_신년사_정지선_현대백화점그룹_회장_quot그룹의_축적된_본원적_경쟁력_통.txt
+2026-01-02 07:52:03 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072748_AI_터잡은_ICT_산업_안정적_성장_기대.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 07:52:32 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072748_quot수출경쟁력_미약한_K-드론약점_보완_과제quot.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 07:53:15 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072749_12월_제약사_이모저모비보존제약_지씨셀_노바티스_한미약품_GC녹십.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 07:53:55 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_072749_올해_전기차_보조금_지급기준_이렇게_바뀐다_V2G_기능_제작사_평가_시.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 07:54:33 | INFO | news_worker | [VectorDB Updated] stats={'count': 3846, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 08:04:45 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080442_현대차그룹_만프레드_하러_양산차_개발_사령탑에_차량_성능_전문성으.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 08:05:28 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080442_quot국산_AI_반도체_죽느냐_사느냐2026년이_분기점quot.txt chunks=19 (chunk=1000, overlap=200)
+2026-01-02 08:07:21 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080443_中보다_6년_빨랐지만도돌이표_규제_갇힌_K-휴머노이드biz-플러스.txt chunks=19 (chunk=1000, overlap=200)
+2026-01-02 08:09:21 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080443_데이비드_도니_플랙트그룹_CEO_quot삼성과_협력해_AI_공조시장_판_바꾼다quot.txt chunks=15 (chunk=1000, overlap=200)
+2026-01-02 08:10:46 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080443_2026_새해_달라지는_것-AI_AI기본법_1월_22일_시행_과태료_1년_계도.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 08:11:32 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080443_늦어버린_국가사이버안보전략해킹_민관협력_청사진_서둘러야.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 08:12:42 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080443_quot은값_1년새_90_폭등_구리는_사상_최고quot원자재_ETF_블랙홀_된_자본.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 08:13:18 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080443_플랙트그룹_CEO_quot삼성_AI_역량_더해_공조_시장_리더로_도약quot.txt chunks=9 (chunk=1000, overlap=200)
+2026-01-02 08:14:08 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080443_천창수_울산교육감_quot독서토론교육_강화로_수업_혁신quot.txt chunks=15 (chunk=1000, overlap=200)
+2026-01-02 08:15:37 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080444_신년_기획_2026년_예산_환경기후부문_분석.txt chunks=10 (chunk=1000, overlap=200)
+2026-01-02 08:16:32 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080444_냉난방공조_플랙트그룹_CEO_삼성과_공조시장_글로벌_리더로.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 08:17:37 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080444_플랙트그룹_CEO_quot삼성과_협력해_공조시장_글로벌_리더_도약quot.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 08:18:44 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080444_경기도_올해_공동주택_안전환경_개선에_152억_투입.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 08:19:45 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080444_삼성화재_quot글로벌_사업_확장AI_활용_확대2030년까지_기업가치_30조원.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 08:20:50 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080444_AI의_종목_이야기_테슬라_자율주행_열광에도_판매량_전망은_암운.txt chunks=14 (chunk=1000, overlap=200)
+2026-01-02 08:22:12 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080445_신년인터뷰_주무현_지방사회연구원장_quot남해안_위기_가속하는데_노동부.txt chunks=15 (chunk=1000, overlap=200)
+2026-01-02 08:23:34 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_080445_병오년_승부수_류재철_LG전자_사장의_실행_경영_첫_시험대_CES_2.txt chunks=5 (chunk=1000, overlap=200)
+2026-01-02 08:24:01 | INFO | news_worker | [VectorDB Updated] stats={'count': 4046, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 08:34:13 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083410_중앙대_정시_1만_4616명_지원.txt chunks=10 (chunk=1000, overlap=200)
+2026-01-02 08:35:20 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083410_계명대_2026학년도_정시_경쟁률_998대_1역대_최고_기록.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 08:36:24 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083410_장인화_회장_quot안전_경영_구호_아닌_실천K-Safety_모범사례_확산quot신년.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 08:37:30 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083410_챗GPT에_속은_학생들_quot아는_것만_물어볼래요quotAI_검증_전략_스스로_개.txt chunks=16 (chunk=1000, overlap=200)
+2026-01-02 08:39:02 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083410_올_정부정책_핵심은_경제회복공정질서안전.txt chunks=7 (chunk=1000, overlap=200)
+2026-01-02 08:39:38 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083410_완도군_2025_하반기_적극_행정_우수_공무원협업팀_선정.txt chunks=9 (chunk=1000, overlap=200)
+2026-01-02 08:40:11 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083411_인사_한국교육학술정보원.txt chunks=4 (chunk=1000, overlap=200)
+2026-01-02 08:40:28 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083411_삼성화재_글로벌_확장AI로_1위_자리_굳힌다_2030년까지_기업_가치.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 08:41:31 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083411_해양교통안전공단_해양안전_인공지능_전환선박검사_디지털화_집중.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 08:42:41 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083411_충청국내_10대_뉴스_이재명_정부_출범_세종시_행정수도_완성_공식.txt chunks=18 (chunk=1000, overlap=200)
+2026-01-02 08:44:35 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083411_신년사_2026년_신한금융그룹미래_금융을_향한_대담한_실행.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 08:45:19 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083411_삼성화재_quot올해_전_부문_압도적_1위_공고히글로벌AI_확장quot.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 08:45:52 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083411_더벨정보보안_거버넌스_점검전사역량_동원_GM_이사회_산하_전담_소.txt chunks=10 (chunk=1000, overlap=200)
+2026-01-02 08:46:39 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083412_삼성화재_올해_혁신_통해_보험시장_판_바꾼다.txt chunks=5 (chunk=1000, overlap=200)
+2026-01-02 08:47:02 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083412_이문화_삼성화재_대표_글로벌_탑티어_보험사_교두보_마련.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 08:48:08 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083412_현장을_압도하는_강인함_KGM_무쏘MUSSO_공개_미디어_프리뷰_현장.txt chunks=9 (chunk=1000, overlap=200)
+2026-01-02 08:48:59 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083412_삼성證_2026년_자동차_산업_피지컬_AI_전환기현대차기아_로봇.txt chunks=10 (chunk=1000, overlap=200)
+2026-01-02 08:50:00 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_083412_특허기술상_수상_현대모비스_11월_차부품업계_관심도_1위한국금호.txt chunks=6 (chunk=1000, overlap=200)
+2026-01-02 08:50:31 | INFO | news_worker | [VectorDB Updated] stats={'count': 4222, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 09:00:42 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_090039_순천향대_2026학년도_정시모집_최종_경쟁률_846대_1정원_내.txt chunks=11 (chunk=1000, overlap=200)
+2026-01-02 09:02:00 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_090039_장인화_포스코_회장_에너AI안전이_포스코_미래신년사_-_뉴시스.txt chunks=1 (chunk=1000, overlap=200)
+2026-01-02 09:02:04 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_090040_SK이노_새해_키워드로_변화성과주요_경영진_신년사.txt chunks=12 (chunk=1000, overlap=200)
+2026-01-02 09:03:15 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_090040_전영현노태문_quotAI_시대_선도quot_신년사_쪼갠_삼성전자_새해_총력전.txt chunks=8 (chunk=1000, overlap=200)
+2026-01-02 09:03:58 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_090040_삼성화재_글로벌_사업_확장_등_보험시장_판_바꾼다.txt chunks=5 (chunk=1000, overlap=200)
+2026-01-02 09:04:23 | INFO | news_worker | Embed news file=/Users/gutaewan/Documents/GitHub/TRAG02/news_texts/20260102_090041_신년사_장인화_포스코그룹_회장.txt chunks=12 (chunk=1000, overlap=200)

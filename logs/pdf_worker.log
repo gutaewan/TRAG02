@@ -1,0 +1,1708 @@
+2026-01-01 21:53:32 | INFO | pdf_worker | PDF changed/new detected: ./data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-01 21:53:41 | INFO | pdf_worker | Split into chunks: 240 (chunk=1000, overlap=200)
+2026-01-01 22:10:31 | INFO | pdf_worker | PDF changed/new detected: ./data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-01 22:10:31 | INFO | pdf_worker | Split into chunks: 40 (chunk=1000, overlap=200)
+2026-01-01 22:13:44 | INFO | pdf_worker | PDF changed/new detected: ./data/C781-revised-final.pdf
+2026-01-01 22:13:45 | INFO | pdf_worker | Split into chunks: 80 (chunk=1000, overlap=200)
+2026-01-01 22:16:14 | INFO | pdf_worker | PDF changed/new detected: ./data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-01 22:16:17 | INFO | pdf_worker | Split into chunks: 31 (chunk=1000, overlap=200)
+2026-01-01 22:18:34 | INFO | pdf_worker | PDF changed/new detected: ./data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-01 22:18:34 | INFO | pdf_worker | Split into chunks: 56 (chunk=1000, overlap=200)
+2026-01-01 22:20:38 | INFO | pdf_worker | PDF changed/new detected: ./data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-01 22:20:38 | INFO | pdf_worker | Split into chunks: 14 (chunk=1000, overlap=200)
+2026-01-01 22:21:06 | INFO | pdf_worker | PDF changed/new detected: ./data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-01 22:21:09 | INFO | pdf_worker | Split into chunks: 376 (chunk=1000, overlap=200)
+2026-01-01 22:35:00 | INFO | pdf_worker | PDF changed/new detected: ./data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-01 22:35:00 | INFO | pdf_worker | Split into chunks: 28 (chunk=1000, overlap=200)
+2026-01-01 22:37:19 | INFO | pdf_worker | [VectorDB Updated] stats={'count': 865, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 01:25:50 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 01:25:50 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 01:25:54 | INFO | pdf_worker | Split into chunks: 438 (chunk=1000, overlap=200)
+2026-01-02 01:44:12 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 01:44:12 | INFO | pdf_worker | Split into chunks: 60 (chunk=1000, overlap=200)
+2026-01-02 01:46:38 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 01:46:38 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 01:46:38 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 01:46:38 | INFO | pdf_worker | Split into chunks: 83 (chunk=1000, overlap=200)
+2026-01-02 01:49:47 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 01:49:54 | INFO | pdf_worker | Split into chunks: 240 (chunk=1000, overlap=200)
+2026-01-02 02:07:46 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 02:07:46 | INFO | pdf_worker | Split into chunks: 40 (chunk=1000, overlap=200)
+2026-01-02 02:11:06 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 02:11:06 | INFO | pdf_worker | Split into chunks: 80 (chunk=1000, overlap=200)
+2026-01-02 02:13:39 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 02:13:42 | INFO | pdf_worker | Split into chunks: 31 (chunk=1000, overlap=200)
+2026-01-02 02:16:02 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 02:16:02 | INFO | pdf_worker | Split into chunks: 56 (chunk=1000, overlap=200)
+2026-01-02 02:18:05 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 02:18:05 | INFO | pdf_worker | Split into chunks: 14 (chunk=1000, overlap=200)
+2026-01-02 02:18:31 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 02:18:34 | INFO | pdf_worker | Split into chunks: 376 (chunk=1000, overlap=200)
+2026-01-02 02:32:31 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 02:32:31 | INFO | pdf_worker | Split into chunks: 28 (chunk=1000, overlap=200)
+2026-01-02 02:34:49 | INFO | pdf_worker | [VectorDB Updated] stats={'count': 2311, 'persist_directory': './chroma_db', 'collection_name': 'rag_collection'}
+2026-01-02 02:34:49 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 02:34:49 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 02:34:49 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 02:34:49 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 02:34:49 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 02:34:49 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 02:34:49 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 02:34:49 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 02:34:49 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 02:34:49 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 02:34:49 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 02:34:49 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 02:34:49 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 02:34:49 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 02:34:49 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 02:44:53 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 02:44:53 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 02:44:53 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 02:44:53 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 02:44:53 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 02:44:53 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 02:44:53 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 02:44:53 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 02:44:53 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 02:44:53 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 02:44:53 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 02:44:53 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 02:44:53 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 02:44:53 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 02:44:53 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 02:54:58 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 02:54:58 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 02:54:58 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 02:54:58 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 02:54:58 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 02:54:58 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 02:54:58 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 02:54:58 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 02:54:58 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 02:54:58 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 02:54:58 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 02:54:58 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 02:54:58 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 02:54:58 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 02:54:58 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 03:05:02 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 03:05:02 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 03:05:02 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 03:05:02 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 03:05:02 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 03:05:02 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 03:05:02 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 03:05:02 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 03:05:02 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 03:05:02 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 03:05:02 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 03:05:02 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 03:05:02 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 03:05:02 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 03:05:02 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 03:15:07 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 03:15:07 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 03:15:07 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 03:15:07 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 03:15:07 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 03:15:07 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 03:15:07 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 03:15:07 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 03:15:07 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 03:15:07 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 03:15:07 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 03:15:07 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 03:15:07 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 03:15:07 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 03:15:07 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 03:25:11 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 03:25:11 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 03:25:11 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 03:25:11 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 03:25:12 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 03:25:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 03:25:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 03:25:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 03:25:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 03:25:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 03:25:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 03:25:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 03:25:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 03:25:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 03:25:12 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 03:35:16 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 03:35:16 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 03:35:16 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 03:35:16 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 03:35:16 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 03:35:16 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 03:35:16 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 03:35:16 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 03:35:16 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 03:35:16 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 03:35:16 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 03:35:16 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 03:35:16 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 03:35:16 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 03:35:16 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 03:45:20 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 03:45:20 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 03:45:20 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 03:45:20 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 03:45:20 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 03:45:20 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 03:45:20 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 03:45:20 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 03:45:20 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 03:45:20 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 03:45:20 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 03:45:20 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 03:45:20 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 03:45:20 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 03:45:20 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 03:55:24 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 03:55:24 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 03:55:24 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 03:55:24 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 03:55:24 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 03:55:24 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 03:55:24 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 03:55:24 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 03:55:24 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 03:55:24 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 03:55:24 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 03:55:24 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 03:55:24 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 03:55:24 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 03:55:24 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 04:05:29 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 04:05:29 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 04:05:29 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 04:05:29 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 04:05:29 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 04:05:29 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 04:05:29 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 04:05:29 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 04:05:29 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 04:05:29 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 04:05:29 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 04:05:29 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 04:05:29 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 04:05:29 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 04:05:29 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 04:15:33 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 04:15:33 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 04:15:33 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 04:15:33 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 04:15:33 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 04:15:33 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 04:15:33 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 04:15:33 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 04:15:33 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 04:15:33 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 04:15:33 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 04:15:33 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 04:15:33 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 04:15:33 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 04:15:33 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 04:25:37 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 04:25:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 04:25:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 04:25:37 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 04:25:37 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 04:25:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 04:25:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 04:25:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 04:25:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 04:25:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 04:25:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 04:25:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 04:25:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 04:25:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 04:25:37 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 04:35:41 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 04:35:41 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 04:35:41 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 04:35:41 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 04:35:41 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 04:35:41 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 04:35:41 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 04:35:41 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 04:35:41 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 04:35:41 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 04:35:41 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 04:35:41 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 04:35:41 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 04:35:41 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 04:35:41 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 04:45:46 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 04:45:46 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 04:45:46 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 04:45:46 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 04:45:46 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 04:45:46 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 04:45:46 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 04:45:46 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 04:45:46 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 04:45:46 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 04:45:46 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 04:45:46 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 04:45:46 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 04:45:46 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 04:45:46 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 04:55:50 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 04:55:50 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 04:55:50 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 04:55:50 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 04:55:50 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 04:55:50 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 04:55:50 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 04:55:50 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 04:55:50 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 04:55:50 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 04:55:50 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 04:55:50 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 04:55:50 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 04:55:50 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 04:55:50 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 05:05:54 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 05:05:54 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 05:05:54 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 05:05:54 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 05:05:54 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 05:05:54 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 05:05:54 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 05:05:54 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 05:05:54 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 05:05:54 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 05:05:54 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 05:05:54 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 05:05:54 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 05:05:54 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 05:05:54 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 05:15:59 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 05:15:59 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 05:15:59 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 05:15:59 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 05:15:59 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 05:15:59 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 05:15:59 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 05:15:59 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 05:15:59 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 05:15:59 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 05:15:59 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 05:15:59 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 05:15:59 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 05:15:59 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 05:15:59 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 05:26:03 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 05:26:03 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 05:26:03 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 05:26:03 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 05:26:03 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 05:26:03 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 05:26:03 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 05:26:03 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 05:26:03 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 05:26:03 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 05:26:03 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 05:26:03 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 05:26:03 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 05:26:03 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 05:26:03 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 05:36:08 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 05:36:08 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 05:36:08 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 05:36:08 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 05:36:08 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 05:36:08 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 05:36:08 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 05:36:08 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 05:36:08 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 05:36:08 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 05:36:08 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 05:36:08 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 05:36:08 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 05:36:08 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 05:36:08 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 05:46:12 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 05:46:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 05:46:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 05:46:12 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 05:46:12 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 05:46:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 05:46:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 05:46:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 05:46:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 05:46:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 05:46:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 05:46:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 05:46:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 05:46:12 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 05:46:12 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 05:56:17 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 05:56:17 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 05:56:17 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 05:56:17 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 05:56:17 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 05:56:17 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 05:56:17 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 05:56:17 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 05:56:17 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 05:56:17 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 05:56:17 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 05:56:17 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 05:56:17 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 05:56:17 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 05:56:17 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 06:06:21 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 06:06:21 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 06:06:21 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 06:06:21 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 06:06:21 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 06:06:21 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 06:06:21 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 06:06:21 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 06:06:21 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 06:06:21 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 06:06:21 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 06:06:21 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 06:06:21 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 06:06:21 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 06:06:21 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 06:16:25 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 06:16:25 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 06:16:25 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 06:16:25 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 06:16:25 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 06:16:25 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 06:16:25 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 06:16:25 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 06:16:25 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 06:16:25 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 06:16:25 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 06:16:25 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 06:16:25 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 06:16:25 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 06:16:25 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 06:26:30 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 06:26:30 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 06:26:30 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 06:26:30 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 06:26:30 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 06:26:30 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 06:26:30 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 06:26:30 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 06:26:30 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 06:26:30 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 06:26:30 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 06:26:30 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 06:26:30 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 06:26:30 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 06:26:30 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 06:36:34 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 06:36:34 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 06:36:34 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 06:36:34 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 06:36:34 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 06:36:34 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 06:36:34 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 06:36:34 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 06:36:34 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 06:36:34 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 06:36:34 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 06:36:34 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 06:36:34 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 06:36:34 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 06:36:34 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 06:46:39 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 06:46:39 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 06:46:39 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 06:46:39 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 06:46:39 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 06:46:39 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 06:46:39 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 06:46:39 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 06:46:39 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 06:46:39 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 06:46:39 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 06:46:39 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 06:46:39 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 06:46:39 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 06:46:39 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 06:56:43 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 06:56:43 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 06:56:43 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 06:56:43 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 06:56:43 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 06:56:43 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 06:56:43 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 06:56:43 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 06:56:43 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 06:56:43 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 06:56:43 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 06:56:43 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 06:56:43 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 06:56:43 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 06:56:43 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 07:06:47 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 07:06:47 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 07:06:47 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 07:06:47 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 07:06:47 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 07:06:47 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 07:06:47 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 07:06:47 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 07:06:47 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 07:06:47 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 07:06:47 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 07:06:47 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 07:06:47 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 07:06:47 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 07:06:47 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 07:16:51 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 07:16:51 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 07:16:51 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 07:16:51 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 07:16:51 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 07:16:51 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 07:16:51 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 07:16:51 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 07:16:51 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 07:16:51 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 07:16:51 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 07:16:51 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 07:16:51 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 07:16:51 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 07:16:51 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 07:26:55 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 07:26:55 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 07:26:55 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 07:26:56 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 07:26:56 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 07:26:56 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 07:26:56 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 07:26:56 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 07:26:56 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 07:26:56 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 07:26:56 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 07:26:56 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 07:26:56 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 07:26:56 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 07:26:56 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 07:37:00 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 07:37:00 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 07:37:00 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 07:37:00 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 07:37:00 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 07:37:00 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 07:37:00 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 07:37:00 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 07:37:00 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 07:37:00 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 07:37:00 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 07:37:00 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 07:37:00 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 07:37:00 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 07:37:00 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 07:47:04 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 07:47:04 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 07:47:04 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 07:47:04 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 07:47:04 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 07:47:04 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 07:47:04 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 07:47:04 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 07:47:04 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 07:47:04 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 07:47:04 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 07:47:04 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 07:47:04 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 07:47:04 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 07:47:04 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 07:57:09 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 07:57:09 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 07:57:09 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 07:57:09 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 07:57:09 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 07:57:09 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 07:57:09 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 07:57:09 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 07:57:09 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 07:57:09 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 07:57:09 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 07:57:09 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 07:57:09 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 07:57:09 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 07:57:09 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 08:07:13 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 08:07:13 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 08:07:13 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 08:07:13 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 08:07:13 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 08:07:13 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 08:07:13 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 08:07:13 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 08:07:13 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 08:07:13 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 08:07:13 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 08:07:13 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 08:07:13 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 08:07:13 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 08:07:13 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 08:17:18 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 08:17:18 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 08:17:18 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 08:17:18 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 08:17:18 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 08:17:18 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 08:17:18 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 08:17:18 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 08:17:18 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 08:17:18 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 08:17:18 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 08:17:18 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 08:17:18 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 08:17:18 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 08:17:18 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 08:27:23 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 08:27:23 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 08:27:23 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 08:27:23 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 08:27:23 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 08:27:23 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 08:27:23 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 08:27:23 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 08:27:23 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 08:27:23 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 08:27:23 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 08:27:23 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 08:27:23 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 08:27:23 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 08:27:23 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 08:37:27 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 08:37:27 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 08:37:27 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 08:37:27 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 08:37:27 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 08:37:27 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 08:37:27 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 08:37:27 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 08:37:27 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 08:37:27 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 08:37:27 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 08:37:27 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 08:37:27 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 08:37:27 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 08:37:27 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 08:47:32 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 08:47:32 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 08:47:32 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 08:47:32 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 08:47:32 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 08:47:32 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 08:47:32 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 08:47:32 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 08:47:32 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 08:47:32 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 08:47:32 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 08:47:32 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 08:47:32 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 08:47:32 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 08:47:32 | INFO | pdf_worker | No PDF updates detected.
+2026-01-02 08:57:36 | INFO | pdf_worker | run_once start | DATA_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/data STATE_DIR=/Users/gutaewan/Documents/GitHub/TRAG02/state chunk=1000 overlap=200
+2026-01-02 08:57:36 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012441_Large_Language_Models_for_Software_Engineering_A_Systematic_Literature_Review_e11532c63a.pdf
+2026-01-02 08:57:36 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012443_A_robotaxi_artificial_intelligence_safety_failure_790cf61bed.pdf
+2026-01-02 08:57:36 | INFO | pdf_worker | PDF changed/new detected: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf
+2026-01-02 08:57:36 | ERROR | pdf_worker | Failed to embed PDF: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012451_Discussion_on_Artificial_Intelligence_Safety_and_Ethical_Issues_208f160c83.pdf | err=Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 99, in run_once
+    docs = _load_pdf_docs(pdf_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Documents/GitHub/TRAG02/trag/workers/pdf_watcher_worker.py", line 32, in _load_pdf_docs
+    return loader.load()
+           ^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_core/document_loaders/base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/langchain_community/document_loaders/parsers/pdf.py", line 384, in lazy_parse
+    pdf_reader = pypdf.PdfReader(pdf_file_obj, password=self.password)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 131, in __init__
+    self._initialize_stream(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 153, in _initialize_stream
+    self.read(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 592, in read
+    self._find_eof_marker(stream)
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_reader.py", line 698, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gutaewan/Exercise/TRAG/.conda/lib/python3.12/site-packages/pypdf/_utils.py", line 316, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-01-02 08:57:36 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/20260102_012459_Source_Data_Verification_SDV_quality_in_clinical_research_A_scoping_review_6fc64a5335.pdf
+2026-01-02 08:57:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/AutomotiveSPICE_PAM_31_Korean.pdf
+2026-01-02 08:57:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/BOK 이슈노트 제2022-38호 인공지능 언어모형을 이용한 인플레이션 어조지수 개발 및 시사.pdf
+2026-01-02 08:57:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/C781-revised-final.pdf
+2026-01-02 08:57:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/CodeAnt_Code_Slicing_Tool_for_Effective_Software_V.pdf
+2026-01-02 08:57:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Data Fingerprinting with Similarity Digests.pdf
+2026-01-02 08:57:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/ICSE_2018_Analysis of Requirements Quality Evolution.pdf
+2026-01-02 08:57:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/Tebbe_KLH_BR217_Mopf_MG15_Heckleuchte_QEV111AGEGLV_2015-11-05_13-27_2015.pdf
+2026-01-02 08:57:37 | INFO | pdf_worker | Unchanged, skip: /Users/gutaewan/Documents/GitHub/TRAG02/data/대한민국헌법(헌법)(제00010호)(19880225).pdf
+2026-01-02 08:57:37 | INFO | pdf_worker | No PDF updates detected.

@@ -1,0 +1,7 @@
+TITLE: 미래차 패권다툼, 전기서 SDV로…자율주행 국가 대항전 개막 - v.daum.net
+URL: https://news.google.com/rss/articles/CBMiT0FVX3lxTE5iWklnbG85dHlOOXNfNnNVcGw4UkpBTHVyUDBFQUxFN1UwYzFXQkRnVUpLUHFscEI2V3lTWUZuV2NiMUpsYWgyWFliZVVkZ2M?oc=5
+SOURCE: google_news_rss
+QUERY: SDV
+EXTRACTION: minimal
+
+Google News

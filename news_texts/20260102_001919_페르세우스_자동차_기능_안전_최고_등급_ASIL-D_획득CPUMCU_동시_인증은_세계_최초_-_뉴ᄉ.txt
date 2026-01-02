@@ -1,0 +1,7 @@
+TITLE: 페르세우스, 자동차 기능 안전 최고 등급 ASIL-D 획득…CPU·MCU 동시 인증은 세계 최초 - 뉴스탭
+URL: https://news.google.com/rss/articles/CBMibEFVX3lxTE9IZUlFWnZHNE5FZUNrLUFoRjlWbFNlclVLRFl0OHlBcUYxczVlVDlkY3l2OGR4ZGs2U2VmaG90Yll5U2xyalZVWFJjemdZWTg2aVFnX0xTd0REN2t5dy1DcHNRUlNldThQUmlfTQ?oc=5
+SOURCE: google_news_rss
+QUERY: 자동차 기능안전
+EXTRACTION: minimal
+
+Google News

@@ -1,0 +1,13 @@
+2026-01-02 11:06:48 | INFO | scopus_worker | [Scopus] run_once start
+2026-01-02 11:06:49 | WARNING | scopus_worker | [Scopus] 401 Client Error. query='TITLE-ABS-KEY("소프트웨어 공학")' start=0 count=25 body_head='{"service-error":{"status":{"statusCode":"AUTHORIZATION_ERROR","statusText":"The requestor is not authorized to access the requested view or fields of the resource"}}}'
+2026-01-02 11:06:49 | INFO | scopus_worker | [Scopus] keyword='소프트웨어 공학' new_items=0
+2026-01-02 11:06:50 | WARNING | scopus_worker | [Scopus] 401 Client Error. query='TITLE-ABS-KEY("AI 안전")' start=0 count=25 body_head='{"service-error":{"status":{"statusCode":"AUTHORIZATION_ERROR","statusText":"The requestor is not authorized to access the requested view or fields of the resource"}}}'
+2026-01-02 11:06:50 | INFO | scopus_worker | [Scopus] keyword='AI 안전' new_items=0
+2026-01-02 11:06:52 | WARNING | scopus_worker | [Scopus] 401 Client Error. query='TITLE-ABS-KEY("자동차 기능안전")' start=0 count=25 body_head='{"service-error":{"status":{"statusCode":"AUTHORIZATION_ERROR","statusText":"The requestor is not authorized to access the requested view or fields of the resource"}}}'
+2026-01-02 11:06:52 | INFO | scopus_worker | [Scopus] keyword='자동차 기능안전' new_items=0
+2026-01-02 11:06:53 | WARNING | scopus_worker | [Scopus] 401 Client Error. query='TITLE-ABS-KEY(SDV)' start=0 count=25 body_head='{"service-error":{"status":{"statusCode":"AUTHORIZATION_ERROR","statusText":"The requestor is not authorized to access the requested view or fields of the resource"}}}'
+2026-01-02 11:06:53 | INFO | scopus_worker | [Scopus] keyword='SDV' new_items=0
+2026-01-02 11:06:55 | WARNING | scopus_worker | [Scopus] 401 Client Error. query='TITLE-ABS-KEY(Ontology)' start=0 count=25 body_head='{"service-error":{"status":{"statusCode":"AUTHORIZATION_ERROR","statusText":"The requestor is not authorized to access the requested view or fields of the resource"}}}'
+2026-01-02 11:06:55 | INFO | scopus_worker | [Scopus] keyword='Ontology' new_items=0
+2026-01-02 11:06:57 | INFO | scopus_worker | [Scopus] no pending items to embed
+2026-01-02 11:06:57 | INFO | scopus_worker | [Scopus] run_once done. total_new=0 embed_chunks=0 elapsed=8.3s

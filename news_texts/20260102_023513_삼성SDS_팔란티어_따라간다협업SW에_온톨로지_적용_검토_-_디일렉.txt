@@ -1,0 +1,7 @@
+TITLE: 삼성SDS, 팔란티어 따라간다...협업SW에 '온톨로지' 적용 검토 - 디일렉
+URL: https://news.google.com/rss/articles/CBMiZkFVX3lxTE41LXgzMWo4eS11cE5ZTzFVME10Ukd0b19JY0EtQ09YdVZOTEstQ29DNlNNbzhIeUxpZGg5T0RfMHljckktcEVQazBWYmhZMW51Sndrd2pyMDQyQTRoWXRKSk5zcjdsQQ?oc=5
+SOURCE: google_news_rss
+QUERY: Ontology
+EXTRACTION: minimal
+
+Google News
